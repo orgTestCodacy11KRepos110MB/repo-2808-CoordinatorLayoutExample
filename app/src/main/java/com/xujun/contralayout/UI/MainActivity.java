@@ -33,11 +33,19 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.btn_parallax:
-            jump(ViewPagerParallax.class);
-            break;
+                jump(ViewPagerParallax.class);
+                break;
 
             case R.id.btn_parallax_snap:
                 jump(ViewPagerParallaxSnap.class);
+                break;
+
+            case R.id.btn_zhihu:
+                jump(ZhiHuActivity.class);
+                break;
+
+            case R.id.btn_jianshu:
+                jump(JianShuActivity.class);
                 break;
 
             default:
