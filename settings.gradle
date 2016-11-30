@@ -1,2 +1,1 @@
-include ':app', ':StickyNavLayout', ':CoordinatorLayoutUserInfoShowPage' ,
-        ':TabbedCoordinatorLayout'
+include ':app', ':StickyNavLayout', ':StickyNavLayout-master', ':mybehavior'

@@ -25,6 +25,10 @@
         </activity>
         <activity android:name=".UI.ViewPagerParallaxSnap">
         </activity>
+        <activity android:name=".UI.ZhiHuActivity">
+        </activity>
+        <activity android:name=".UI.JianShuActivity">
+        </activity>
     </application>
 
 </manifest>
