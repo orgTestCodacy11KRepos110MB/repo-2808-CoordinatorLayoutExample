@@ -37,7 +37,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="16dp"
-        app:layout_behavior="com.xujun.contralayout.behavior.FooterBehavior">
+        app:layout_behavior="@string/behavior_footer">
 
         <TextView
             android:layout_width="wrap_content"
