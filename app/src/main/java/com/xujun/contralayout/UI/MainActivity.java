@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 jump(ZhiHuActivity.class);
                 break;
 
+            case R.id.btn_zhihu_home:
+                jump(ZhiHuHomeActivity.class);
+                break;
+
             case R.id.btn_jianshu:
                 jump(JianShuActivity.class);
                 break;

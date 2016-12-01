@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".UI.JianShuActivity">
         </activity>
+        <activity android:name=".UI.ZhiHuHomeActivity">
+        </activity>
     </application>
 
 </manifest>
