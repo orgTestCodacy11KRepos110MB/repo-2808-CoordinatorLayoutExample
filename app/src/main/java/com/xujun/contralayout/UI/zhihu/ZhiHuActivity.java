@@ -1,4 +1,4 @@
-package com.xujun.contralayout.UI;
+package com.xujun.contralayout.UI.zhihu;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

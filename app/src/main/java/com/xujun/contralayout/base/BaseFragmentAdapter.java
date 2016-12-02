@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class BaseFragmentAdapter extends FragmentPagerAdapter {
 
-    protected List<Fragment> fragmentList;
+    protected List<Fragment> mFragmentList;
 
     protected String[] mTitles;
 
@@ -27,31 +27,31 @@ public class BaseFragmentAdapter extends FragmentPagerAdapter {
         if (fragmentList == null) {
             fragmentList = new ArrayList<>();
         }
-        this.fragmentList = fragmentList;
+        this.mFragmentList = fragmentList;
         this.mTitles = mTitles;
     }
 
     public void add(Fragment fragment) {
         if (isEmpty()) {
-            fragmentList = new ArrayList<>();
+            mFragmentList = new ArrayList<>();
 
         }
-        fragmentList.add(fragment);
+        mFragmentList.add(fragment);
     }
 
     @Override
     public Fragment getItem(int position) {
         //        Logger.i("BaseFragmentAdapter position=" +position);
-        return isEmpty() ? null : fragmentList.get(position);
+        return isEmpty() ? null : mFragmentList.get(position);
     }
 
     @Override
     public int getCount() {
-        return isEmpty() ? 0 : fragmentList.size();
+        return isEmpty() ? 0 : mFragmentList.size();
     }
 
     public boolean isEmpty() {
-        return fragmentList == null;
+        return mFragmentList == null;
 
     }
 

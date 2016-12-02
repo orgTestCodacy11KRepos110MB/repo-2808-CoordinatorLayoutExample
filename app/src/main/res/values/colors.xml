@@ -11,5 +11,6 @@
     <!-- <color name="bg_tab_unselect">#C0C0C0</color>-->
     <color name="bg_tab_unselect">#272636</color>
     <color name="bg_tab">#fff</color>
+    <color name="tab_color">@android:color/white</color>
 
 </resources>

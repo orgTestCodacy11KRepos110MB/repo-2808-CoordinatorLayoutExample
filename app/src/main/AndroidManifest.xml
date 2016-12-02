@@ -25,11 +25,11 @@
         </activity>
         <activity android:name=".UI.ViewPagerParallaxSnap">
         </activity>
-        <activity android:name=".UI.ZhiHuActivity">
+        <activity android:name=".UI.zhihu.ZhiHuActivity">
         </activity>
         <activity android:name=".UI.JianShuActivity">
         </activity>
-        <activity android:name=".UI.ZhiHuHomeActivity">
+        <activity android:name=".UI.zhihu.ZhiHuHomeActivity">
         </activity>
     </application>
 

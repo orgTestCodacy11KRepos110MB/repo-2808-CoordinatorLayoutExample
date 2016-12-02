@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.xujun.contralayout.R;
+import com.xujun.contralayout.UI.zhihu.ZhiHuActivity;
+import com.xujun.contralayout.UI.zhihu.ZhiHuHomeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
