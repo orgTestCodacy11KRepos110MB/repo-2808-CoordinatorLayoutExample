@@ -15,9 +15,11 @@
  */
 package com.xujun.contralayout.utils;
 
+import android.animation.ValueAnimator;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -26,6 +28,8 @@ import android.view.View;
  * @author Yan Zhenjie.
  */
 public class AnimatorUtil {
+
+    public static  final String TAG="xujun";
 
     public static final LinearOutSlowInInterpolator FAST_OUT_SLOW_IN_INTERPOLATOR = new LinearOutSlowInInterpolator();
 
@@ -52,6 +56,38 @@ public class AnimatorUtil {
                 .setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR)
                 .setListener(viewPropertyAnimatorListener)
                 .start();
+    }
+
+    public static void tanslationShow(final View view,float  start,float end){
+        final ValueAnimator animator=ValueAnimator.ofFloat(start,end);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                Float value = (Float) animator.getAnimatedValue();
+                Log.i(TAG, "onAnimationUpdate: value="+value);
+                view.setTranslationY(value);
+            }
+        });
+        animator.setDuration(200);
+        animator.setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR);
+        animator.start();
+    }
+
+    public static void show(final View view,int  start,int end){
+       final int height = view.getHeight();
+        final ValueAnimator animator=ValueAnimator.ofInt(start,end);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                int value = (Integer) animator.getAnimatedValue();
+                Log.i(TAG, "onAnimationUpdate: value="+value);
+                view.setTop(value);
+                view.setBottom(value+height);
+            }
+        });
+        animator.setDuration(200);
+        animator.setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR);
+        animator.start();
     }
 
 }

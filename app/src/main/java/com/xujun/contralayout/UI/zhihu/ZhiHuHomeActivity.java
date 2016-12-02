@@ -1,9 +1,8 @@
 package com.xujun.contralayout.UI.zhihu;
 
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.FrameLayout;
@@ -22,6 +21,7 @@ public class ZhiHuHomeActivity extends AppCompatActivity {
     FrameLayout mFl;
     RadioGroup mRg;
 
+    private AppBarLayout mAppBarLayout;
 
     public static final String TAG = "xujun";
 
@@ -34,14 +34,19 @@ public class ZhiHuHomeActivity extends AppCompatActivity {
     private Fragment mCurFragment;
     private ZhiHuAdapter mZhiHuAdapter;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zhihu_home);
         initView();
         initEvent();
+        initHeaderAndFooter();
+    }
 
-        //        initListener();
+    private void initHeaderAndFooter() {
+
     }
 
     private void initEvent() {
@@ -74,22 +79,7 @@ public class ZhiHuHomeActivity extends AppCompatActivity {
     private void initView() {
         mFl = (FrameLayout) findViewById(R.id.fl);
         mRg = (RadioGroup) findViewById(R.id.rg);
-    }
-
-    private void showFragment(Fragment from, Fragment to) {
-        FragmentManager supportFragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = supportFragmentManager.beginTransaction();
-        if (!to.isAdded()) {    // 先判断是否被add过
-            transaction.add(R.id.fl, to); // 隐藏当前的fragment，add下一个到Activity中
-        } else {
-            transaction.show(to); // 隐藏当前的fragment，显示下一个
-        }
-
-        if (from != null) {
-            transaction.hide(from);
-        }
-        transaction.commit();
-
+        mAppBarLayout = (AppBarLayout) findViewById(R.id.appBarLayout);
     }
 
     public void replace(Fragment fragment) {
@@ -97,5 +87,28 @@ public class ZhiHuHomeActivity extends AppCompatActivity {
                 .replace(R.id.fl, fragment).commit();
     }
 
+    @Override
+    public void onBackPressed() {
+        if (isBottomHide()) {
+            int top = mAppBarLayout.getTop();
+            int bottom = mAppBarLayout.getBottom();
+            Log.i(TAG, "onBackPressed: bottom=" + bottom);
+            Log.i(TAG, "onBackPressed: bottom=" + bottom);
+            //            AnimatorUtil.show(mAppBarLayout,top,0);
 
+
+        } else {
+            super.onBackPressed();
+        }
+
+
+    }
+
+    public boolean isBottomHide() {
+        //        这里mRg的TranslationY之所以会改变，是因为我们改变了他的值
+        float translationY = mRg.getTranslationY();
+
+        return translationY > 0;
+
+    }
 }
