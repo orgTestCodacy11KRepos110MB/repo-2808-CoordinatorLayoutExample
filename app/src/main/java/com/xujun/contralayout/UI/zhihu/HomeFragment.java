@@ -35,6 +35,7 @@ public class HomeFragment extends BaseFragment {
 
     List<String> mDatas = new ArrayList<>();
     private ItemAdapter mAdapter;
+    private RecyclerViewDisabler mRecyclerViewDisabler;
 
     public static HomeFragment newInstance(String text) {
         HomeFragment homeFragment = new HomeFragment();
@@ -61,10 +62,10 @@ public class HomeFragment extends BaseFragment {
         mMenu.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
             @Override
             public void onMenuToggle(boolean opened) {
-                if(opened){
-                    mRecyclerView.setNestedScrollingEnabled(false);
-                }else{
-                    mRecyclerView.setNestedScrollingEnabled(true);
+                if (opened) {
+                    mRecyclerView.addOnItemTouchListener(mRecyclerViewDisabler);
+                } else {
+                    mRecyclerView.removeOnItemTouchListener(mRecyclerViewDisabler);
                 }
             }
         });
@@ -89,13 +90,14 @@ public class HomeFragment extends BaseFragment {
                     Log.i(TAG, "onScrolled: menuHidden=" + menuHidden);
                     Log.i(TAG, "onScrolled: menuButtonHidden=" + menuButtonHidden);
                     if (dy > 0) {//向下滑动
-                        //                       if(false==mMenu.isOpened()){
-                        //                           mMenu.hideMenu(true);
-                        //                           mMenu.hideMenuButton(true);
-                        //                       }
+                        if (menuHidden == false) {
+                            mMenu.hideMenu(true);
+                        }
 
                     } else {//想上滑动
-
+                        if (menuHidden == true) {
+                            mMenu.showMenu(true);
+                        }
                     }
                 }
             }
@@ -114,6 +116,8 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void initData() {
         super.initData();
+
+        mRecyclerViewDisabler = new RecyclerViewDisabler();
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
         DividerItemDecoration itemDecoration = new DividerItemDecoration(mContext,
