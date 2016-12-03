@@ -70,8 +70,12 @@ public abstract class BaseFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         LUtils.i(getClass().getSimpleName() + ">>>>>>>>>>>　　onActivityCreated");
         isViewInitiated = true;
+        initListener();
         initData();
         prepareFetchData();
+    }
+
+    protected void initListener() {
     }
 
     @Override

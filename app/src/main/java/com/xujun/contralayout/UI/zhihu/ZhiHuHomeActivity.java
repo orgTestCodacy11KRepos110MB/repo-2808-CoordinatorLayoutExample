@@ -53,10 +53,17 @@ public class ZhiHuHomeActivity extends AppCompatActivity {
         ((RadioButton) mRg.getChildAt(currentTab)).setChecked(true);
         mFragments = new ArrayList<>();
         for (int i = 0; i < mTiltles.length; i++) {
-            ItemFragement itemFragement = ItemFragement.newInstance(mTiltles[i]);
-            mFragments.add(itemFragement);
+            if(i==0){
+                HomeFragment homeFragment = new HomeFragment();
+                mFragments.add(homeFragment);
+            }else{
+                ItemFragement itemFragement = ItemFragement.newInstance(mTiltles[i]);
+                mFragments.add(itemFragement);
+            }
+
         }
         mCurFragment = mFragments.get(currentTab);
+
 
         mZhiHuAdapter = new ZhiHuAdapter(this, mFragments, R.id.fl);
         mRg.setOnCheckedChangeListener(mZhiHuAdapter);
@@ -72,6 +79,8 @@ public class ZhiHuHomeActivity extends AppCompatActivity {
             }
         });
         replace(mCurFragment);
+
+
 
 
     }
