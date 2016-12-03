@@ -59,7 +59,7 @@ public class ItemFragement extends BaseFragment {
         mRecyclerView.setLayoutManager(layoutManager);
 
         for(int i=0;i<30;i++){
-            String s = String.format("我是第%d个" + title, i);
+            String s = String.format("I am %d " + title, i);
             mDatas.add(s);
         }
 

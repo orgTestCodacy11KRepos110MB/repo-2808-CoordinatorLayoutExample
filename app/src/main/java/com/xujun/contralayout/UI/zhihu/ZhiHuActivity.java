@@ -27,13 +27,7 @@ public class ZhiHuActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-        /**
-         * 设置 toolBar
-         */
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        // 该属性必须在setSupportActionBar之前 调用
-        mToolbar.setTitle("zhihu");
-        setSupportActionBar(mToolbar);
+
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
