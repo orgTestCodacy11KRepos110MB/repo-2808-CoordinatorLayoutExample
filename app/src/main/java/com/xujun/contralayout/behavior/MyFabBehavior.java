@@ -11,6 +11,7 @@ import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
 
 /**
+ *  FloatingActionButton behavior 向上向下隐藏的
  * @author xujun  on 2016/12/1.
  * @email gdutxiaoxu@163.com
  */

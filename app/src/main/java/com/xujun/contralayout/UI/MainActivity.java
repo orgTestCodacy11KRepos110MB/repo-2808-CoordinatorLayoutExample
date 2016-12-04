@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 jump(ViewPagerParallaxSnap.class);
                 break;
 
+            case R.id.btn_floatingAction:
+                jump(FloatingActionButtonActivity.class);
+                break;
+
             case R.id.btn_zhihu:
                 jump(ZhiHuActivity.class);
                 break;
