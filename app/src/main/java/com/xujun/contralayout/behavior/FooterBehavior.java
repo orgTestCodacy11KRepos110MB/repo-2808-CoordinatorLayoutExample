@@ -11,6 +11,8 @@ import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
 
 /**
+ * 知乎效果底部 behavior
+ *
  * @author xujun  on 2016/11/30.
  * @email gdutxiaoxu@163.com
  */
@@ -45,7 +47,8 @@ public class FooterBehavior extends CoordinatorLayout.Behavior<View> {
         if (sinceDirectionChange > child.getHeight() && visibility == View.VISIBLE) {
             hide(child);
         } else {
-            if (sinceDirectionChange < 0 && (visibility == View.GONE  ||  visibility==View.INVISIBLE)) {
+            if (sinceDirectionChange < 0 && (visibility == View.GONE || visibility == View
+                    .INVISIBLE)) {
                 show(child);
             }
         }

@@ -1,1 +1,1 @@
-include ':app', ':StickyNavLayout', ':StickyNavLayout-master', ':mybehavior', ':QQBottomTab-master', ':DefineBehaviorFAB'
+include ':app', ':StickyNavLayout', ':StickyNavLayout-master', ':mybehavior', ':QQBottomTab-master', ':DefineBehaviorFAB', ':CoordinatorLayoutDemo'

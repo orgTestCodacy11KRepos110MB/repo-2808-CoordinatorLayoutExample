@@ -21,6 +21,8 @@ import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 
 /**
  * Created on 2016/7/14.
@@ -58,18 +60,37 @@ public class AnimatorUtil {
                 .start();
     }
 
-    public static void tanslationShow(final View view,float  start,float end){
+    public static void tanslation(final View view,float  start,float end){
         final ValueAnimator animator=ValueAnimator.ofFloat(start,end);
+        view.setVisibility(View.VISIBLE);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 Float value = (Float) animator.getAnimatedValue();
-                Log.i(TAG, "onAnimationUpdate: value="+value);
+                Log.i(TAG, "tanslation: value="+value);
                 view.setTranslationY(value);
             }
         });
         animator.setDuration(200);
         animator.setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR);
+        animator.start();
+    }
+
+    public static void showHeight(final View view,float  start,float end){
+        final ValueAnimator animator=ValueAnimator.ofFloat(start,end);
+        final ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                float value = (Float) animator.getAnimatedValue();
+                layoutParams.height=(int) value;
+                view.setLayoutParams(layoutParams);
+                Log.i(TAG, "onAnimationUpdate: value="+value);
+
+            }
+        });
+        animator.setDuration(200);
+        animator.setInterpolator(new AccelerateInterpolator());
         animator.start();
     }
 

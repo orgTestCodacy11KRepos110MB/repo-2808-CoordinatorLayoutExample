@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 
 /**
+ * 知乎效果底部behavior 依赖于 AppBarLayout
+ *
  * @author xujun  on 2016/11/30.
  * @email gdutxiaoxu@163.com
  */
@@ -28,10 +30,9 @@ public class FooterBehaviorDependAppBar extends CoordinatorLayout.Behavior<View>
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
 
-        float translationY = Math.abs(dependency.getTranslationY());
-        Log.i(TAG, "onDependentViewChanged: "+translationY);
+        float translationY = Math.abs(dependency.getTop());
+        Log.i(TAG, "onDependentViewChanged: " + translationY);
         child.setTranslationY(translationY);
-
 
 
         return true;
