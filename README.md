@@ -42,6 +42,10 @@
 
 ![](http://7xvjnq.com2.z0.glb.qiniucdn.com/public/16-12-4/57255134.jpg)
 
+- 左右隐藏的
+
+![](http://ww3.sinaimg.cn/large/9fe4afa0gw1fakqs333ymg208s0gjq6z.gif)
+
 ## 博客
 
 [使用CoordinatorLayout打造各种炫酷的效果](http://blog.csdn.net/gdutxiaoxu/article/details/52858598)
