@@ -30,14 +30,22 @@ public class HorizontalFabBehavior extends CoordinatorLayout.Behavior<View> {
 
     public static  final String TAG="xujun";
 
+    boolean isRight = true;
+
     //在嵌套滑动开始前回调
     @Override
     public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, View child, View directTargetChild, View target, int nestedScrollAxes) {
 
         if(child.getVisibility() == View.VISIBLE&&viewX==0){
             //获取控件距离父布局（coordinatorLayout）底部距离
-            viewX=coordinatorLayout.getWidth()-child.getLeft();
-            Log.i(TAG, "onStartNestedScroll: viewX=" +viewX);
+
+            if(isRight){
+                viewX=coordinatorLayout.getWidth()-child.getLeft();
+                Log.i(TAG, "onStartNestedScroll: viewX=" +viewX);
+            }else{
+                viewX=-child.getRight();
+            }
+
         }
 
         return (nestedScrollAxes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0;//判断是否竖直滚动

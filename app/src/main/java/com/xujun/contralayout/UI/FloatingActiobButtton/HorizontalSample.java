@@ -15,6 +15,9 @@ public class HorizontalSample extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private ArrayList<String> mDatas;
     private ItemAdapter mItemAdapter;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
