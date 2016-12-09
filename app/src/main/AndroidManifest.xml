@@ -31,7 +31,9 @@
         </activity>
         <activity android:name=".UI.zhihu.ZhiHuHomeActivity">
         </activity>
-        <activity android:name=".UI.FloatingActionButtonActivity">
+        <activity android:name=".UI.FloatingActiobButtton.FloatingActionButtonActivity">
+        </activity>
+        <activity android:name=".UI.FloatingActiobButtton.HorizontalSample">
         </activity>
     </application>
 

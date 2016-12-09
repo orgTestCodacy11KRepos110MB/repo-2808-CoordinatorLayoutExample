@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.xujun.contralayout.R;
+import com.xujun.contralayout.UI.FloatingActiobButtton.FloatingActionButtonActivity;
+import com.xujun.contralayout.UI.FloatingActiobButtton.HorizontalSample;
 import com.xujun.contralayout.UI.zhihu.ZhiHuActivity;
 import com.xujun.contralayout.UI.zhihu.ZhiHuHomeActivity;
 
@@ -44,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btn_floatingAction:
                 jump(FloatingActionButtonActivity.class);
+                break;
+
+            case R.id.btn_floatingAction_horizontal:
+                jump(HorizontalSample.class);
                 break;
 
             case R.id.btn_zhihu:
