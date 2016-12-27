@@ -35,6 +35,8 @@
         </activity>
         <activity android:name=".UI.FloatingActiobButtton.HorizontalSample">
         </activity>
+        <activity android:name=".UI.cardView.CardViewSample">
+        </activity>
     </application>
 
 </manifest>

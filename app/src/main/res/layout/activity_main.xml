@@ -84,5 +84,12 @@
             android:onClick="onButtonClick"
             android:text="仿简书 "/>
 
+        <Button
+            android:id="@+id/btn_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClick"
+            android:text="CardViewSample "/>
+
     </LinearLayout>
 </ScrollView>
