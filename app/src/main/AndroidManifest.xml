@@ -37,6 +37,10 @@
         </activity>
         <activity android:name=".UI.cardView.CardViewSample">
         </activity>
+        <activity android:name=".UI.BottomSheetSample">
+        </activity>
+        <activity android:name=".UI.DrawLayoutSample">
+        </activity>
     </application>
 
 </manifest>

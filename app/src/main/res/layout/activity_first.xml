@@ -38,4 +38,20 @@
         android:layout_margin="15dp"
         android:src="@drawable/add_2"/>
 
+    <RelativeLayout
+        android:id="@+id/rl_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="100dp"
+        android:background="@color/colorAccent"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <TextView
+            android:text="我是 BottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
 </android.support.design.widget.CoordinatorLayout>

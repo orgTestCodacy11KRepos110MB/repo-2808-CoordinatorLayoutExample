@@ -132,6 +132,12 @@ public class MainActivity extends AppCompatActivity {
                 jump(CardViewSample.class);
                 break;
 
+
+            case R.id.btn_drawlayout:
+                jump(DrawLayoutSample.class);
+                break;
+
+
             default:
                 break;
         }

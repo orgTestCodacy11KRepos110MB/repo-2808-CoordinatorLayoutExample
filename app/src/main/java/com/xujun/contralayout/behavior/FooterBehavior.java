@@ -34,6 +34,13 @@ public class FooterBehavior extends CoordinatorLayout.Behavior<View> {
         return (nestedScrollAxes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0;
     }
 
+    @Override
+    public void onNestedScroll(CoordinatorLayout coordinatorLayout, View child, View target, int
+            dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {
+        super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed,
+                dxUnconsumed, dyUnconsumed);
+    }
+
     //2.根据滑动的距离显示和隐藏footer view
     @Override
     public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, View child,
