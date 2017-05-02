@@ -1,1 +1,1 @@
-include ':app', ':StickyNavLayout-master', ':SupportLibraryDemo', ':CoordinatorLayoutDemo'
+include ':app', ':StickyNavLayout-master', ':SupportLibraryDemo', ':CoordinatorLayoutDemo', ':qqbroswer', ':MyNestScroll', ':UcMainPagerDemo', ':QQBroswer2'

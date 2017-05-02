@@ -2,6 +2,9 @@
 <manifest package="com.xujun.contralayout"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,15 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".UI.ToolBarSampleSnar">
+        <activity android:name=".UI.toolBar.ToolBarSampleSnar">
         </activity>
-        <activity android:name=".UI.ToolBarSample">
+        <activity android:name=".UI.toolBar.ToolBarSample">
         </activity>
-        <activity android:name=".UI.ViewPagerSample">
+        <activity android:name=".UI.viewPager.ViewPagerSample">
         </activity>
-        <activity android:name=".UI.ViewPagerParallax">
+        <activity android:name=".UI.viewPager.ViewPagerParallax">
         </activity>
-        <activity android:name=".UI.ViewPagerParallaxSnap">
+        <activity android:name=".UI.viewPager.ViewPagerParallaxSnap">
         </activity>
         <activity android:name=".UI.zhihu.ZhiHuActivity">
         </activity>
@@ -37,9 +40,17 @@
         </activity>
         <activity android:name=".UI.cardView.CardViewSample">
         </activity>
-        <activity android:name=".UI.BottomSheetSample">
+        <activity android:name=".UI.drawlayout.DrawLayoutSample">
         </activity>
-        <activity android:name=".UI.DrawLayoutSample">
+
+        <activity android:name=".UI.bottomsheet.BottomSheetActivity">
+        </activity>
+
+
+        <activity android:name=".UI.bottomsheet.BaiduMapSample">
+        </activity>
+
+        <activity android:name=".UI.viewPager.ViewPagerNew">
         </activity>
     </application>
 

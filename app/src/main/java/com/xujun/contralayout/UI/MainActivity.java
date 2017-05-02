@@ -14,7 +14,15 @@ import android.view.Window;
 import com.xujun.contralayout.R;
 import com.xujun.contralayout.UI.FloatingActiobButtton.FloatingActionButtonActivity;
 import com.xujun.contralayout.UI.FloatingActiobButtton.HorizontalSample;
+import com.xujun.contralayout.UI.bottomsheet.BottomSheetActivity;
 import com.xujun.contralayout.UI.cardView.CardViewSample;
+import com.xujun.contralayout.UI.drawlayout.DrawLayoutSample;
+import com.xujun.contralayout.UI.toolBar.ToolBarSample;
+import com.xujun.contralayout.UI.toolBar.ToolBarSampleSnar;
+import com.xujun.contralayout.UI.viewPager.ViewPagerNew;
+import com.xujun.contralayout.UI.viewPager.ViewPagerParallax;
+import com.xujun.contralayout.UI.viewPager.ViewPagerParallaxSnap;
+import com.xujun.contralayout.UI.viewPager.ViewPagerSample;
 import com.xujun.contralayout.UI.zhihu.ZhiHuActivity;
 import com.xujun.contralayout.UI.zhihu.ZhiHuHomeActivity;
 
@@ -136,6 +144,16 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_drawlayout:
                 jump(DrawLayoutSample.class);
                 break;
+
+            case R.id.btn_bottom_sheet:
+                jump(BottomSheetActivity.class);
+                break;
+
+            case R.id.btn_viewpager_new:
+                jump(ViewPagerNew.class);
+                break;
+
+
 
 
             default:

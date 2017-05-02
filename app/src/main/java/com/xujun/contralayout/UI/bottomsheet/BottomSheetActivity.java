@@ -1,35 +1,42 @@
-package com.jay.supportlibrarydemo.bottomsheet;
+package com.xujun.contralayout.UI.bottomsheet;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.view.View;
 
-import com.jay.supportlibrarydemo.R;
-import com.jay.supportlibrarydemo.SimpleActivity;
+import com.xujun.contralayout.R;
+import com.xujun.contralayout.base.BaseMVPActivity;
+import com.xujun.contralayout.base.mvp.IBasePresenter;
 
 /**
  * Created by Q.Jay on 2016/4/30 15:27
  *
  * @version 1.0.0
  */
-public class BottomSheetActivity extends SimpleActivity implements View.OnClickListener {
+public class BottomSheetActivity extends BaseMVPActivity implements View.OnClickListener {
     private static final String TAG = "BottomSheetActivity";
     private BottomSheetBehavior<View> behavior;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.bottom_sheet_activity);
 
-        setOnClickListener(this, R.id.btnBehavior, R.id.btnDialog);
+
+    @Override
+    protected IBasePresenter setPresenter() {
+        return null;
+    }
+
+    @Override
+    protected int getContentViewLayoutID() {
+        return R.layout.bottom_sheet_activity;
+    }
+
+    @Override
+    protected void initView() {
+        setOnClickListener(this, R.id.btnBehavior, R.id.btnDialog,R.id.btn_baidumap);
 
         View bottomSheet = findViewById(R.id.bottom_sheet);
         if (bottomSheet != null) {
             behavior = BottomSheetBehavior.from(bottomSheet);
             behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-
         }
     }
 
@@ -50,6 +57,9 @@ public class BottomSheetActivity extends SimpleActivity implements View.OnClickL
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
                 bottomSheetDialog.setContentView(R.layout.include_bottom_sheet_layout);
                 bottomSheetDialog.show();
+                break;
+            case R.id.btn_baidumap:
+                readyGo(BaiduMapSample.class);
                 break;
         }
     }

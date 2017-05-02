@@ -89,7 +89,7 @@ public class AnimatorUtil {
 
             }
         });
-        animator.setDuration(200);
+        animator.setDuration(500);
         animator.setInterpolator(new AccelerateInterpolator());
         animator.start();
     }
@@ -106,6 +106,7 @@ public class AnimatorUtil {
                 view.setBottom(value+height);
             }
         });
+        view.setVisibility(View.VISIBLE);
         animator.setDuration(200);
         animator.setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR);
         animator.start();
