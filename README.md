@@ -1,12 +1,28 @@
 
 
 
+## 相关博客
 
+
+
+[使用CoordinatorLayout打造各种炫酷的效果](http://blog.csdn.net/gdutxiaoxu/article/details/52858598)
+
+[自定义Behavior —— 仿知乎，FloatActionButton隐藏与展示](http://blog.csdn.net/gdutxiaoxu/article/details/53453958)
+
+[NestedScrolling 机制深入解析](http://blog.csdn.net/gdutxiaoxu/article/details/71553411)
+
+[ 一步步带你读懂 CoordinatorLayout 源码](http://blog.csdn.net/gdutxiaoxu/article/details/71616547)
+
+[自定义 Behavior ——仿新浪微博发现页的实现](http://blog.csdn.net/gdutxiaoxu/article/details/71732642)
+
+----
 
 
 ## 下面我们一起先来看一下我们实现的效果图
 
+仿新浪微博效果图：
 
+![仿新浪微博效果图](http://ww1.sinaimg.cn/mw690/9fe4afa0gy1ffhsjh1sgpg208r0hq1kx.gif)
 
 
 
@@ -46,8 +62,16 @@
 
 ![](http://ww3.sinaimg.cn/large/9fe4afa0gw1fakqs333ymg208s0gjq6z.gif)
 
-## 博客
+## 题外话
+
+如果觉得效果还不错的，请 star，谢谢。
 
 [使用CoordinatorLayout打造各种炫酷的效果](http://blog.csdn.net/gdutxiaoxu/article/details/52858598)
 
 [自定义Behavior —— 仿知乎，FloatActionButton隐藏与展示](http://blog.csdn.net/gdutxiaoxu/article/details/53453958)
+
+[NestedScrolling 机制深入解析](http://blog.csdn.net/gdutxiaoxu/article/details/71553411)
+
+[ 一步步带你读懂 CoordinatorLayout 源码](http://blog.csdn.net/gdutxiaoxu/article/details/71616547)
+
+[自定义 Behavior ——仿新浪微博发现页的实现](http://blog.csdn.net/gdutxiaoxu/article/details/71732642)
