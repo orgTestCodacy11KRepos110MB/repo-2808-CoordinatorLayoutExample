@@ -22,7 +22,7 @@
 
 仿新浪微博效果图：
 
-![仿新浪微博效果图](http://ww1.sinaimg.cn/mw690/9fe4afa0gy1ffhsjh1sgpg208r0hq1kx.gif)
+![仿新浪微博效果图](https://ww1.sinaimg.cn/mw690/9fe4afa0gy1ffhsjh1sgpg208r0hq1kx.gif)
 
 
 
