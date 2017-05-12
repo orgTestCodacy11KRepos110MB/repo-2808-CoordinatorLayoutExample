@@ -23,5 +23,9 @@ public class BaseAPP extends Application {
 
     }
 
+    public  static  BaseAPP getAppContext(){
+        return mBaseAPP;
+    }
+
 
 }

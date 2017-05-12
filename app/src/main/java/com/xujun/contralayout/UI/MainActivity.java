@@ -1,15 +1,16 @@
 package com.xujun.contralayout.UI;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.widget.Toast;
 
 import com.xujun.contralayout.R;
 import com.xujun.contralayout.UI.FloatingActiobButtton.FloatingActionButtonActivity;
@@ -23,21 +24,37 @@ import com.xujun.contralayout.UI.viewPager.ViewPagerNew;
 import com.xujun.contralayout.UI.viewPager.ViewPagerParallax;
 import com.xujun.contralayout.UI.viewPager.ViewPagerParallaxSnap;
 import com.xujun.contralayout.UI.viewPager.ViewPagerSample;
+import com.xujun.contralayout.UI.weibo.WeiboSampleActivity;
 import com.xujun.contralayout.UI.zhihu.ZhiHuActivity;
 import com.xujun.contralayout.UI.zhihu.ZhiHuHomeActivity;
+import com.xujun.contralayout.base.BaseMVPActivity;
+import com.xujun.contralayout.base.mvp.IBasePresenter;
+import com.xujun.contralayout.base.permissions.PermissonListener;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
 
-    public static  final String TAG="xujun";
+public class MainActivity extends BaseMVPActivity {
+
+    public static final String TAG = "xujun";
+
+    String[] mPermissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected IBasePresenter setPresenter() {
+        return null;
+    }
+
+    @Override
+    protected int getContentViewLayoutID() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
 
         final View decorView = getWindow().getDecorView();
-        decorView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-
+        decorView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver
+                .OnGlobalLayoutListener() {
 
             @Override
             public void onGlobalLayout() {
@@ -56,23 +73,36 @@ public class MainActivity extends AppCompatActivity {
                 int contentTop = getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop();
                 //statusBarHeight是上面所求的状态栏的高度
                 int titleBarHeight = contentTop - statusBarHeight;
-                Log.i(TAG, "onGlobalLayout: titleBarHeight=" +titleBarHeight);
-                Log.i(TAG, "onGlobalLayout: statusBarHeight=" +statusBarHeight);
+                Log.i(TAG, "onGlobalLayout: titleBarHeight=" + titleBarHeight);
+                Log.i(TAG, "onGlobalLayout: statusBarHeight=" + statusBarHeight);
             }
         });
+    }
 
+    @Override
+    protected void initData(Bundle savedInstanceState) {
+        super.initData(savedInstanceState);
+        requestPermissions(mPermissions, new PermissonListener() {
+            @Override
+            public void onGranted() {
+                Toast.makeText(MainActivity.this, "授权成功", Toast.LENGTH_SHORT).show();
+            }
 
+            @Override
+            public void onDenied(List<String> permisons) {
+                Toast.makeText(MainActivity.this, "授权失败", Toast.LENGTH_SHORT).show();
+            }
 
-
-
-
-
+            @Override
+            public void onParmanentDenied(List<String> parmanentDeniedPer) {
+                Toast.makeText(MainActivity.this, "权限被永久拒绝", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-
 
         //屏幕
         DisplayMetrics dm = new DisplayMetrics();
@@ -88,7 +118,8 @@ public class MainActivity extends AppCompatActivity {
         //View绘制区域
         Rect outRect2 = new Rect();
         getWindow().findViewById(Window.ID_ANDROID_CONTENT).getDrawingRect(outRect2);
-        Log.e("WangJ", "View绘制区域顶部-错误方法：" + outRect2.top);   //不能像上边一样由outRect2.top获取，这种方式获得的top是0，可能是bug吧
+        Log.e("WangJ", "View绘制区域顶部-错误方法：" + outRect2.top);
+        //不能像上边一样由outRect2.top获取，这种方式获得的top是0，可能是bug吧
         int viewTop = getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop();   //要用这种方法
         Log.e("WangJ", "View绘制区域顶部-正确方法：" + viewTop);
         Log.e("WangJ", "View绘制区域高度：" + outRect2.height());
@@ -154,6 +185,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
 
+            case R.id.btn_weibo_sample:
+                jump(WeiboSampleActivity.class);
+                break;
 
 
             default:
