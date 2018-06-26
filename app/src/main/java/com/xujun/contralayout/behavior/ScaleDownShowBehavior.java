@@ -52,6 +52,7 @@ public class ScaleDownShowBehavior extends FloatingActionButton.Behavior {
     @Override
     public void onNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child, View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {
         if ((dyConsumed > 0 || dyUnconsumed > 0) && !isAnimatingOut && child.getVisibility() == View.VISIBLE) {//往下滑
+            child.setVisibility(View.INVISIBLE);
             AnimatorUtil.scaleHide(child, viewPropertyAnimatorListener);
             if (mOnStateChangedListener != null) {
                 mOnStateChangedListener.onChanged(false);
@@ -95,7 +96,8 @@ public class ScaleDownShowBehavior extends FloatingActionButton.Behavior {
         @Override
         public void onAnimationEnd(View view) {
             isAnimatingOut = false;
-            view.setVisibility(View.GONE);
+            // 注意不要设置为 Gone，这样在高版本的会导致 viewBehavior.onNestedScrol 没机会调用
+            view.setVisibility(View.INVISIBLE);
         }
 
         @Override
