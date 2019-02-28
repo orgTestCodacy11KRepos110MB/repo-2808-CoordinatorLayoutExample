@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".UI.viewPager.ViewPagerParallax">
         </activity>
+        <activity android:name=".UI.viewPager.ViewPagerParallax2">
+        </activity>
         <activity android:name=".UI.viewPager.ViewPagerParallaxSnap">
         </activity>
         <activity android:name=".UI.zhihu.ZhiHuActivity">

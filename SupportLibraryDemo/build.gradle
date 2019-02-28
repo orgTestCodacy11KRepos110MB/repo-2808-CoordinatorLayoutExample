@@ -24,11 +24,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile rootProject.ext.dep["appcompat-v7"]
-    compile rootProject.ext.dep["recyclerview-v7"]
-    compile rootProject.ext.dep["cardview-v7"]
-    compile rootProject.ext.dep["design"]
-    compile rootProject.ext.dep["logger"]
+    implementation rootProject.ext.dep["appcompat-v7"]
+    implementation rootProject.ext.dep["recyclerview-v7"]
+    implementation rootProject.ext.dep["cardview-v7"]
+    implementation rootProject.ext.dep["design"]
+    implementation rootProject.ext.dep["logger"]
 }

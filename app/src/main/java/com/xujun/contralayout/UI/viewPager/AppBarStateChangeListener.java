@@ -2,12 +2,8 @@ package com.xujun.contralayout.UI.viewPager;
 
 import android.support.design.widget.AppBarLayout;
 
-/**
- * @author meitu.xujun  on 2017/5/1 11:27
- * @version 0.1
- */
 
-public  class AppBarStateChangeListener implements AppBarLayout.OnOffsetChangedListener {
+public class AppBarStateChangeListener implements AppBarLayout.OnOffsetChangedListener {
 
     public enum State {
         EXPANDED,
@@ -43,13 +39,13 @@ public  class AppBarStateChangeListener implements AppBarLayout.OnOffsetChangedL
             if (mCurrentState != State.EXPANDED) {
                 mOnStateChangedListener.onExpanded();
             }
-            mLastState=mCurrentState;
+            mLastState = mCurrentState;
             mCurrentState = State.EXPANDED;
         } else if (Math.abs(i) >= appBarLayout.getTotalScrollRange()) {
             if (mCurrentState != State.COLLAPSED) {
                 mOnStateChangedListener.onCollapsed();
             }
-            mLastState=mCurrentState;
+            mLastState = mCurrentState;
             mCurrentState = State.COLLAPSED;
         } else {
             if (mCurrentState != State.INTERNEDIATE) {
@@ -59,7 +55,7 @@ public  class AppBarStateChangeListener implements AppBarLayout.OnOffsetChangedL
                 } else if (mCurrentState == State.EXPANDED) {
                     mOnStateChangedListener.onInternediateFromExpand();
                 }
-                mLastState=mCurrentState;
+                mLastState = mCurrentState;
                 mCurrentState = State.INTERNEDIATE;
             }
             mOnStateChangedListener.onInternediate();
@@ -67,8 +63,7 @@ public  class AppBarStateChangeListener implements AppBarLayout.OnOffsetChangedL
     }
 
 
-
-    public interface OnStateChangedListener{
+    public interface OnStateChangedListener {
         //展开
         void onExpanded();
 

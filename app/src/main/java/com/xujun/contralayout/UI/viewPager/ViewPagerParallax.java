@@ -20,16 +20,16 @@ public class ViewPagerParallax extends AppCompatActivity {
     List<Fragment> mFragments;
     Toolbar mToolbar;
 
-    String[]  mTitles=new String[]{
-            "主页","微博","相册"
+    String[] mTitles = new String[]{
+            "主页", "微博", "相册"
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_four);
-        mViewPager=(ViewPager)findViewById(R.id.viewpager);
-        mToolbar= (Toolbar) findViewById(R.id.toolbar);
+        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
         mToolbar.setTitle("唐嫣");
         setSupportActionBar(mToolbar);
@@ -48,14 +48,13 @@ public class ViewPagerParallax extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        mFragments=new ArrayList<>();
-        for(int i=0;i<mTitles.length;i++){
+        mFragments = new ArrayList<>();
+        for (int i = 0; i < mTitles.length; i++) {
             ListFragment listFragment = ListFragment.newInstance(mTitles[i]);
             mFragments.add(listFragment);
         }
         BaseFragmentAdapter adapter =
-                new BaseFragmentAdapter(getSupportFragmentManager(),mFragments,mTitles);
-
+                new BaseFragmentAdapter(getSupportFragmentManager(), mFragments, mTitles);
 
 
         viewPager.setAdapter(adapter);

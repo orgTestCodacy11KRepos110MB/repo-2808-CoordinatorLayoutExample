@@ -24,26 +24,26 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
 
 
-    compile rootProject.ext.dep["appcompat-v7"]
-    compile rootProject.ext.dep["recyclerview-v7"]
-    compile rootProject.ext.dep["cardview-v7"]
-    compile rootProject.ext.dep["design"]
-    compile rootProject.ext.dep["logger"]
-    compile rootProject.ext.dep["percent"]
-    compile rootProject.ext.dep["picasso"]
-    compile rootProject.ext.dep["okhttp3"]
-    compile rootProject.ext.dep["gson"]
+    implementation rootProject.ext.dep["appcompat-v7"]
+    implementation rootProject.ext.dep["recyclerview-v7"]
+    implementation rootProject.ext.dep["cardview-v7"]
+    implementation rootProject.ext.dep["design"]
+    implementation rootProject.ext.dep["logger"]
+    implementation rootProject.ext.dep["percent"]
+    implementation rootProject.ext.dep["picasso"]
+    implementation rootProject.ext.dep["okhttp3"]
+    implementation rootProject.ext.dep["gson"]
 
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'de.hdodenhof:circleimageview:2.1.0'
-    compile 'com.github.clans:fab:1.6.4'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.github.clans:fab:1.6.4'
 
     testCompile 'junit:junit:4.12'
 }

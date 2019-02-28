@@ -22,6 +22,7 @@ import com.xujun.contralayout.UI.toolBar.ToolBarSample;
 import com.xujun.contralayout.UI.toolBar.ToolBarSampleSnar;
 import com.xujun.contralayout.UI.viewPager.ViewPagerNew;
 import com.xujun.contralayout.UI.viewPager.ViewPagerParallax;
+import com.xujun.contralayout.UI.viewPager.ViewPagerParallax2;
 import com.xujun.contralayout.UI.viewPager.ViewPagerParallaxSnap;
 import com.xujun.contralayout.UI.viewPager.ViewPagerSample;
 import com.xujun.contralayout.UI.weibo.WeiboSampleActivity;
@@ -142,6 +143,11 @@ public class MainActivity extends BaseMVPActivity {
             case R.id.btn_parallax:
                 jump(ViewPagerParallax.class);
                 break;
+
+            case R.id.btn_parallax2:
+                jump(ViewPagerParallax2.class);
+                break;
+
 
             case R.id.btn_parallax_snap:
                 jump(ViewPagerParallaxSnap.class);
