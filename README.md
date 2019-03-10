@@ -19,12 +19,27 @@
 
 [ 一步步带你读懂 CoordinatorLayout 源码](http://blog.csdn.net/gdutxiaoxu/article/details/71616547)
 
-[自定义 Behavior ——仿新浪微博发现页的实现](http://blog.csdn.net/gdutxiaoxu/article/details/71732642)
+[自定义 Behavior -仿新浪微博发现页的实现](http://blog.csdn.net/gdutxiaoxu/article/details/71732642)
+
+[ViewPager，ScrollView 嵌套ViewPager滑动冲突解决](https://blog.csdn.net/gdutxiaoxu/article/details/52939127)
+
+[自定义 behavior - 完美仿 QQ 浏览器首页，美团商家详情页](https://blog.csdn.net/gdutxiaoxu/article/details/88383135)
+
 
 ----
 
 
 ## 下面我们一起先来看一下我们实现的效果图
+
+仿 QQ 浏览器
+
+![image](https://ws4.sinaimg.cn/mw690/9fe4afa0ly1g0xt27m4jrg208q0if46h.gif)
+
+
+仿美图商家详情页面的：
+
+![image](https://ws3.sinaimg.cn/mw690/9fe4afa0gy1g0xt13yy9bg208q0ifh5w.gif)
+
 
 仿新浪微博效果图：
 
@@ -33,8 +48,6 @@
 
 
  结合ToolBar
-
-
 
 ![](http://ww4.sinaimg.cn/mw690/9fe4afa0jw1f8xclhwlhig208s0etthy.gif)
 
@@ -72,6 +85,7 @@
 
 如果觉得效果还不错的，请 star，谢谢。
 
+
 [使用CoordinatorLayout打造各种炫酷的效果](http://blog.csdn.net/gdutxiaoxu/article/details/52858598)
 
 [自定义Behavior —— 仿知乎，FloatActionButton隐藏与展示](http://blog.csdn.net/gdutxiaoxu/article/details/53453958)
@@ -80,4 +94,8 @@
 
 [ 一步步带你读懂 CoordinatorLayout 源码](http://blog.csdn.net/gdutxiaoxu/article/details/71616547)
 
-[自定义 Behavior ——仿新浪微博发现页的实现](http://blog.csdn.net/gdutxiaoxu/article/details/71732642)
+[自定义 Behavior -仿新浪微博发现页的实现](http://blog.csdn.net/gdutxiaoxu/article/details/71732642)
+
+[ViewPager，ScrollView 嵌套ViewPager滑动冲突解决](https://blog.csdn.net/gdutxiaoxu/article/details/52939127)
+
+[自定义 behavior - 完美仿 QQ 浏览器首页，美团商家详情页](https://blog.csdn.net/gdutxiaoxu/article/details/88383135)
