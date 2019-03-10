@@ -3,7 +3,6 @@ package com.xujun.contralayout.UI.toolBar;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,16 +21,15 @@ import java.util.List;
 
 public class ToolBarSampleSnar extends AppCompatActivity {
 
-    RecyclerView mRecyclerView;
-    List<String> mDatas;
-    private ItemAdapter mAdapter;
+    public static final String TAG = "xujun";
 
-    Toolbar mToolbar;
-
-    public static  final String TAG="xujun";
-
+    private RecyclerView mRecyclerView;
     private RelativeLayout mRlBottomSheet;
+    private Toolbar mToolbar;
+
     private BottomSheetBehavior<RelativeLayout> mFrom;
+    private List<String> mDatas;
+    private ItemAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +41,7 @@ public class ToolBarSampleSnar extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         // 该属性必须在setSupportActionBar之前 调用
-        mToolbar.setTitle("toolBar");
+        mToolbar.setTitle("ToolBarSample");
         setSupportActionBar(mToolbar);
 
         initListener();
@@ -52,10 +50,6 @@ public class ToolBarSampleSnar extends AppCompatActivity {
 
     private void initData() {
         WriteLogUtil.init(this);
-
-
-
-
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
         DividerItemDecoration itemDecoration = new DividerItemDecoration(this,
@@ -76,44 +70,28 @@ public class ToolBarSampleSnar extends AppCompatActivity {
         mFrom.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                Log.i(TAG, "onStateChanged: newState=" +newState);
+                Log.i(TAG, "onStateChanged: newState=" + newState);
             }
 
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-                Log.i(TAG, "onStateChanged: slideOffset=" +slideOffset);
+                Log.i(TAG, "onStateChanged: slideOffset=" + slideOffset);
             }
         });
-        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+
+        mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onClick(View view) {
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
 
-                Snackbar.make(view,"FAB",Snackbar.LENGTH_LONG)
-                        .setAction("cancel", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                //这里的单击事件代表点击消除Action后的响应事件
-                                WriteLogUtil.i("Snackbar");
-
-                            }
-                        })
-                        .show();
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                Log.i(TAG, "onScrolled: dy=" + dy);
             }
         });
-       mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
-           @Override
-           public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-               super.onScrollStateChanged(recyclerView, newState);
-           }
-
-           @Override
-           public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-               super.onScrolled(recyclerView, dx, dy);
-               Log.i(TAG, "onScrolled: dy=" +dy);
-           }
-       });
     }
-
 
 
 }

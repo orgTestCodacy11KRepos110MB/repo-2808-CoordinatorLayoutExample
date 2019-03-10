@@ -9,7 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import com.xujun.contralayout.R;
 import com.xujun.contralayout.UI.ListFragment;
@@ -26,8 +25,6 @@ public class ViewPagerParallax2 extends FragmentActivity {
 
     private AppBarLayout mAppBarLayout;
     private View mTitle;
-    private TextView mTvName;
-
     private static final String TAG = "ViewPagerParallax2";
 
     String[] mTitles = new String[]{
@@ -40,10 +37,10 @@ public class ViewPagerParallax2 extends FragmentActivity {
         setContentView(R.layout.activity_four2);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.mainappbar);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
-        mTvName = (TextView) findViewById(R.id.tv_name);
+
         mTitle =  findViewById(R.id.rl_title);
         mTitle.setVisibility(View.GONE);
-        mTvName.setVisibility(View.VISIBLE);
+
 
         setupViewPager();
 
@@ -53,28 +50,24 @@ public class ViewPagerParallax2 extends FragmentActivity {
             public void onExpanded() {
                 Log.i(TAG, "onExpanded: =");
                 mTitle.setVisibility(View.GONE);
-                mTvName.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onCollapsed() {
                 Log.i(TAG, "onCollapsed: =");
                 mTitle.setVisibility(View.VISIBLE);
-                mTvName.setVisibility(View.GONE);
             }
 
             @Override
             public void onInternediateFromExpand() {
                 Log.i(TAG, "onInternediateFromExpand: =");
                 mTitle.setVisibility(View.GONE);
-                mTvName.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onInternediateFromCollapsed() {
                 Log.i(TAG, "onInternediateFromCollapsed: =");
                 mTitle.setVisibility(View.GONE);
-                mTvName.setVisibility(View.VISIBLE);
             }
 
             @Override

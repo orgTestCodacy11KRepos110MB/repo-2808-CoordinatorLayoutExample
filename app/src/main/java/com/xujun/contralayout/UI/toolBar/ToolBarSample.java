@@ -31,7 +31,7 @@ public class ToolBarSample extends AppCompatActivity {
          */
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         // 该属性必须在setSupportActionBar之前 调用
-        mToolbar.setTitle("toolBar");
+        mToolbar.setTitle("ToolBarSample");
         setSupportActionBar(mToolbar);
 
 

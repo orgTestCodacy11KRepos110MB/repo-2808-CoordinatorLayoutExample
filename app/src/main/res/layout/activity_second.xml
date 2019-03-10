@@ -35,6 +35,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="15dp"
-        android:src="@drawable/add_2"/>
+        android:src="@mipmap/ic_home_chat"/>
 
 </android.support.design.widget.CoordinatorLayout>

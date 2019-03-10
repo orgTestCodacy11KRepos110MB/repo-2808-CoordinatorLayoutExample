@@ -31,7 +31,7 @@
             android:layout_width="23dp"
             android:layout_height="23dp"
             android:layout_marginLeft="23dp"
-            android:src="@mipmap/back"
+            android:src="@mipmap/ic_back_black"
             android:layout_centerVertical="true"/>
         <TextView
             android:layout_width="wrap_content"

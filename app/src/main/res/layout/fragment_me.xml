@@ -57,7 +57,7 @@
                     android:paddingBottom="10dp"
                     android:paddingLeft="10dp"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/back"/>
+                    android:src="@mipmap/ic_back_black"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -98,6 +98,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="15dp"
-        android:src="@drawable/add_2"/>
+        android:src="@mipmap/ic_home_chat"/>
 
 </android.support.design.widget.CoordinatorLayout>

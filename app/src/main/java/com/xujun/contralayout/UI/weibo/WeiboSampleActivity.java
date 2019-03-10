@@ -55,6 +55,13 @@ public class WeiboSampleActivity extends BaseMVPActivity implements WeiboHeaderP
         });
         mIvBack.setVisibility(View.INVISIBLE);
 
+        findViewById(R.id.iv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(WeiboSampleActivity.this," 点击 header", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override

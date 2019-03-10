@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.zhihu.ZhiHuHomeActivity"
-    >
+    tools:context=".UI.zhihu.ZhiHuHomeActivity">
 
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
         theme="@style/AppTheme.AppBarOverlay"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        >
+        android:layout_height="?attr/actionBarSize">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|enterAlways"
-
-            >
+            app:layout_scrollFlags="scroll|enterAlways">
 
 
             <ImageView
@@ -32,7 +26,7 @@
                 android:layout_height="24dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/search"/>
+                android:src="@drawable/search" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -43,7 +37,7 @@
                 android:background="@android:color/transparent"
                 android:focusable="false"
                 android:hint="search"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
         </RelativeLayout>
 
@@ -55,9 +49,7 @@
         android:id="@+id/fl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
-        >
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </FrameLayout>
 
@@ -70,32 +62,31 @@
         android:layout_gravity="bottom"
         android:background="@color/bg_tab"
         android:orientation="horizontal"
-        app:layout_behavior="@string/behavior_footer"
-        >
+        app:layout_behavior="@string/behavior_footer">
 
         <RadioButton
             android:id="@+id/rb_home"
             style="@style/bottom_tab"
             android:drawableTop="@drawable/sel_home"
-            android:text="Home"/>
+            android:text="Home" />
 
         <RadioButton
             android:id="@+id/rb_course"
             style="@style/bottom_tab"
             android:drawableTop="@drawable/sel_course"
-            android:text="course"/>
+            android:text="course" />
 
         <RadioButton
             android:id="@+id/rb_direct_seeding"
             style="@style/bottom_tab"
             android:drawableTop="@drawable/sel_direct_seeding"
-            android:text="direct"/>
+            android:text="direct" />
 
         <RadioButton
             android:id="@+id/rb_me"
             style="@style/bottom_tab"
             android:drawableTop="@drawable/sel_me"
-            android:text="me"/>
+            android:text="me" />
 
     </RadioGroup>
 

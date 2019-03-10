@@ -17,7 +17,7 @@
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:scaleType="fitXY"
-        android:src="@mipmap/back"/>
+        android:src="@mipmap/ic_back_black"/>
 
     <TextView
         android:layout_width="wrap_content"

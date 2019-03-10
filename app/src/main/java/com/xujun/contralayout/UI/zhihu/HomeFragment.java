@@ -3,7 +3,6 @@ package com.xujun.contralayout.UI.zhihu;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.github.clans.fab.FloatingActionButton;
@@ -54,21 +53,12 @@ public class HomeFragment extends BaseFragment {
         mMenuItemCollect = (FloatingActionButton) mView.findViewById(R.id.menu_item_collect);
         mMenuItemComment = (FloatingActionButton) mView.findViewById(R.id.menu_item_comment);
         mMenuItemStar = (FloatingActionButton) mView.findViewById(R.id.menu_item_star);
+        mMenu.setVisibility(View.GONE);
 
     }
 
     @Override
     protected void initListener() {
-        mMenu.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
-            @Override
-            public void onMenuToggle(boolean opened) {
-                if (opened) {
-                    mRecyclerView.addOnItemTouchListener(mRecyclerViewDisabler);
-                } else {
-                    mRecyclerView.removeOnItemTouchListener(mRecyclerViewDisabler);
-                }
-            }
-        });
         super.initListener();
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -79,27 +69,6 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                if (isHandleScroll(dy)) {
-                    // 表示是否打开菜单
-                    boolean opened = mMenu.isOpened();
-                    //   表示菜单Menu是否隐藏
-                    boolean menuHidden = mMenu.isMenuHidden();
-                    //  表示菜单menu Item是否隐藏
-                    boolean menuButtonHidden = mMenu.isMenuButtonHidden();
-                    Log.i(TAG, "onScrolled: opened=" + opened);
-                    Log.i(TAG, "onScrolled: menuHidden=" + menuHidden);
-                    Log.i(TAG, "onScrolled: menuButtonHidden=" + menuButtonHidden);
-                    if (dy > 0) {//向下滑动
-                        if (menuHidden == false) {
-                            mMenu.hideMenu(true);
-                        }
-
-                    } else {//想上滑动
-                        if (menuHidden == true) {
-                            mMenu.showMenu(true);
-                        }
-                    }
-                }
             }
         });
     }

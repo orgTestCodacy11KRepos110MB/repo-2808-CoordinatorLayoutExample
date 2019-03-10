@@ -1,56 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light"
-
->
+    android:background="@android:color/background_light">
 
     <FrameLayout
         android:id="@+id/id_weibo_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/weibo_header_height"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:layout_behavior="@string/behavior_weibo_header"
-    >
+        app:layout_behavior="@string/behavior_weibo_header">
 
         <com.xujun.contralayout.UI.weibo.weight.NestedLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/main.backdrop"
+                android:id="@+id/iv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/tangyan"/>
+                android:src="@drawable/tangyan" />
         </com.xujun.contralayout.UI.weibo.weight.NestedLinearLayout>
 
 
     </FrameLayout>
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_behavior="@string/behavior_weibo_content">
 
-        <RelativeLayout android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="?attr/colorPrimary">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?attr/colorPrimary">
 
             <ImageView
                 android:id="@+id/iv_back"
-                android:layout_marginLeft="10dp"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
-                android:src="@mipmap/back"/>
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/ic_back_black" />
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabs"
@@ -61,7 +56,7 @@
                 app:tabIndicatorColor="@color/colorAccent"
                 app:tabIndicatorHeight="4dp"
                 app:tabSelectedTextColor="#000"
-                app:tabTextColor="#fff"/>
+                app:tabTextColor="#fff" />
 
         </RelativeLayout>
 

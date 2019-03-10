@@ -1,7 +1,7 @@
 package com.xujun.contralayout.UI.weibo.behavior;
 
 import android.content.Context;
-import android.support.design.BuildConfig;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.OverScroller;
 
+import com.xujun.contralayout.BuildConfig;
 import com.xujun.contralayout.R;
 import com.xujun.contralayout.base.BaseAPP;
 
@@ -58,15 +59,24 @@ public class WeiboHeaderPagerBehavior extends ViewOffsetBehavior {
     @Override
     public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, View child, View
             directTargetChild, View target, int nestedScrollAxes) {
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "onStartNestedScroll: nestedScrollAxes=" + nestedScrollAxes);
-        }
+
 
         boolean canScroll = canScroll(child, 0);
         //拦截垂直方向上的滚动事件且当前状态是打开的并且还可以继续向上收缩
-        return (nestedScrollAxes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0 && canScroll &&
+        boolean b = (nestedScrollAxes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0 && canScroll &&
                 !isClosed(child);
 
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "onStartNestedScroll: nestedScrollAxes=" + nestedScrollAxes + " b = " + b);
+        }
+        return b;
+
+    }
+
+    @Override
+    public void onNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed, int type) {
+        Log.i(TAG, "onNestedScroll: dyConsumed =" + dyConsumed);
+        super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type);
     }
 
     @Override
@@ -75,14 +85,14 @@ public class WeiboHeaderPagerBehavior extends ViewOffsetBehavior {
         // consumed the flinging behavior until Closed
 
         boolean coumsed = !isClosed(child);
-        Log.i(TAG, "onNestedPreFling: coumsed=" +coumsed);
+        Log.i(TAG, "onNestedPreFling: coumsed=" + coumsed);
         return coumsed;
     }
 
     @Override
     public boolean onNestedFling(CoordinatorLayout coordinatorLayout, View child, View target,
                                  float velocityX, float velocityY, boolean consumed) {
-        Log.i(TAG, "onNestedFling: velocityY=" +velocityY);
+        Log.i(TAG, "onNestedFling: velocityY=" + velocityY);
         return super.onNestedFling(coordinatorLayout, child, target, velocityX, velocityY,
                 consumed);
 
@@ -127,7 +137,6 @@ public class WeiboHeaderPagerBehavior extends ViewOffsetBehavior {
     }
 
 
-
     @Override
     public boolean onInterceptTouchEvent(CoordinatorLayout parent, final View child, MotionEvent
             ev) {
@@ -135,7 +144,7 @@ public class WeiboHeaderPagerBehavior extends ViewOffsetBehavior {
         boolean closed = isClosed();
         Log.i(TAG, "onInterceptTouchEvent: closed=" + closed);
         if (ev.getAction() == MotionEvent.ACTION_UP && !closed) {
-            handleActionUp(parent,child);
+            handleActionUp(parent, child);
         }
 
         return super.onInterceptTouchEvent(parent, child, ev);

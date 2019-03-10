@@ -2,12 +2,12 @@ package com.xujun.contralayout.UI.weibo.behavior;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.design.BuildConfig;
 import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import com.xujun.contralayout.BuildConfig;
 import com.xujun.contralayout.R;
 import com.xujun.contralayout.base.BaseAPP;
 

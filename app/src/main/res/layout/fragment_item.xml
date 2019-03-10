@@ -21,7 +21,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="@dimen/bottom_fab"
         android:padding="0dp"
-        android:src="@drawable/add_1"
+        android:src="@drawable/add"
         app:layout_behavior="@string/behavior_my_fab_scale"/>
 
 </FrameLayout>

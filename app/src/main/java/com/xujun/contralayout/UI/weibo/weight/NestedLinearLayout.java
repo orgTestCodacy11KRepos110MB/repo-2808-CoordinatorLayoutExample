@@ -2,12 +2,13 @@ package com.xujun.contralayout.UI.weibo.weight;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.NestedScrollingChild;
 import android.support.v4.view.NestedScrollingChildHelper;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
+import android.view.ViewConfiguration;
 import android.widget.LinearLayout;
 
 /**
@@ -24,6 +25,8 @@ public class NestedLinearLayout extends LinearLayout implements NestedScrollingC
 
     private NestedScrollingChildHelper mScrollingChildHelper;
     private int lastY;
+    private int mDownY;
+    private int mScaledTouchSlop;
 
     public NestedLinearLayout(Context context) {
         this(context, null);
@@ -43,49 +46,64 @@ public class NestedLinearLayout extends LinearLayout implements NestedScrollingC
             mScrollingChildHelper = new NestedScrollingChildHelper(this);
             mScrollingChildHelper.setNestedScrollingEnabled(true);
         }
+
+        final ViewConfiguration configuration = ViewConfiguration.get(getContext());
+        mScaledTouchSlop = configuration.getScaledTouchSlop();
     }
 
-  @Override
+
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        switch (event.getAction()){
+        switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                lastY = (int) event.getRawY();
+                mDownY = (int) event.getRawY();
                 // 当开始滑动的时候，告诉父view
                 startNestedScroll(ViewCompat.SCROLL_AXIS_HORIZONTAL
                         | ViewCompat.SCROLL_AXIS_VERTICAL);
                 break;
             case MotionEvent.ACTION_MOVE:
-
-                return true;
+                // 确保不消耗 ACTION_DOWN 事件
+                if (Math.abs(event.getRawY() - mDownY) > mScaledTouchSlop) {
+                    return true;
+                }
         }
         return super.onInterceptTouchEvent(event);
     }
 
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()){
+        final int action = MotionEventCompat.getActionMasked(event);
+        switch (action) {
+            case MotionEvent.ACTION_DOWN:
+                startNestedScroll(ViewCompat.SCROLL_AXIS_HORIZONTAL
+                        | ViewCompat.SCROLL_AXIS_VERTICAL);
+                return true;
             case MotionEvent.ACTION_MOVE:
-                Log.i(TAG, "onTouchEvent: ACTION_MOVE=");
-                int y = (int) (event.getRawY());
-                int dy =lastY- y;
-                lastY = y;
-                Log.i(TAG, "onTouchEvent: lastY=" + lastY);
-                Log.i(TAG, "onTouchEvent: dy=" + dy);
-                //  dy < 0 下拉， dy>0 赏花
-                if (dy >0) { // 上滑的时候才交给父类去处理
+                int dy = (int) (event.getRawY() - lastY);
+                lastY = (int) event.getRawY();
+                //  dy < 0 上滑， dy>0 下拉
+                if (dy < 0) { // 上滑的时候才交给父类去处理
                     if (startNestedScroll(ViewCompat.SCROLL_AXIS_VERTICAL) // 如果找到了支持嵌套滚动的父类
-                            && dispatchNestedPreScroll(0, dy, consumed, offset)) {//
+                            && dispatchNestedPreScroll(0, -dy, consumed, offset)) {//
                         // 父类进行了一部分滚动
+
                     }
-                }else{
+                } else {
                     if (startNestedScroll(ViewCompat.SCROLL_AXIS_VERTICAL) // 如果找到了支持嵌套滚动的父类
-                            && dispatchNestedScroll(0, 0, 0,dy, offset)) {//
+                            && dispatchNestedScroll(0, 0, 0, -dy, offset)) {//
                         // 父类进行了一部分滚动
+
                     }
                 }
                 break;
+            case MotionEvent.ACTION_CANCEL:
+            case MotionEvent.ACTION_UP:
+                stopNestedScroll();
+                break;
+
         }
-        return true;
+        return super.onTouchEvent(event);
     }
 
 

@@ -41,27 +41,22 @@
             android:layout_height="50dp">
 
             <ImageView
+                android:id="@+id/iv_back"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/course" />
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/ic_back_black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/app_name" />
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/iv_back"
+                android:text="唐嫣" />
 
         </RelativeLayout>
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:paddingLeft="15dp"
-            android:text="xujun2"
-            android:textSize="20sp" />
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"

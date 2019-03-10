@@ -59,8 +59,6 @@ public class ZhiHuHomeActivity extends AppCompatActivity {
     private void initEvent() {
         ((RadioButton) mRg.getChildAt(mCurrentTab)).setChecked(true);
         mFragments = new ArrayList<>();
-
-
         mFragments.add(new HomeFragment());
         mFragments.add(ItemFragement.newInstance(mTiltles[1]));
         mFragments.add(ItemFragement.newInstance(mTiltles[2]));
