@@ -1,1 +1,1 @@
-include ':app', ':StickyNavLayout-master', ':SupportLibraryDemo', ':CoordinatorLayoutDemo', ':UcMainPagerDemo'
+include ':app', ':StickyNavLayout-master', ':SupportLibraryDemo', ':CoordinatorLayoutDemo', ':UcMainPagerDemo', ':AlipayHomeSample', ':QQBroswerDemo', ':myapplication'

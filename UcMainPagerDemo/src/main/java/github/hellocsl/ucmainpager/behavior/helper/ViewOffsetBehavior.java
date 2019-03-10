@@ -1,7 +1,7 @@
 package github.hellocsl.ucmainpager.behavior.helper;
 
 import android.content.Context;
-import android.support.design.widget.*;
+import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -11,11 +11,9 @@ import android.view.View;
  * Behavior will automatically sets up a {@link android.support.design.widget.ViewOffsetHelper} on a {@link View}.
  */
 public class ViewOffsetBehavior<V extends View> extends CoordinatorLayout.Behavior<V> {
-
-    private ViewOffsetHelper mViewOffsetHelper;
-
-    private int mTempTopBottomOffset = 0;
-    private int mTempLeftRightOffset = 0;
+    private ViewOffsetHelper viewOffsetHelper;
+    private int tempTopBottomOffset = 0;
+    private int tempLeftRightOffset = 0;
 
     public ViewOffsetBehavior() {
     }
@@ -24,56 +22,53 @@ public class ViewOffsetBehavior<V extends View> extends CoordinatorLayout.Behavi
         super(context, attrs);
     }
 
-    @Override
     public boolean onLayoutChild(CoordinatorLayout parent, V child, int layoutDirection) {
-        // First let lay the child out
-        layoutChild(parent, child, layoutDirection);
-
-        if (mViewOffsetHelper == null) {
-            mViewOffsetHelper = new ViewOffsetHelper(child);
+        this.layoutChild(parent, child, layoutDirection);
+        if (this.viewOffsetHelper == null) {
+            this.viewOffsetHelper = new ViewOffsetHelper(child);
         }
-        mViewOffsetHelper.onViewLayout();
 
-        if (mTempTopBottomOffset != 0) {
-            mViewOffsetHelper.setTopAndBottomOffset(mTempTopBottomOffset);
-            mTempTopBottomOffset = 0;
+        this.viewOffsetHelper.onViewLayout();
+        if (this.tempTopBottomOffset != 0) {
+            this.viewOffsetHelper.setTopAndBottomOffset(this.tempTopBottomOffset);
+            this.tempTopBottomOffset = 0;
         }
-        if (mTempLeftRightOffset != 0) {
-            mViewOffsetHelper.setLeftAndRightOffset(mTempLeftRightOffset);
-            mTempLeftRightOffset = 0;
+
+        if (this.tempLeftRightOffset != 0) {
+            this.viewOffsetHelper.setLeftAndRightOffset(this.tempLeftRightOffset);
+            this.tempLeftRightOffset = 0;
         }
 
         return true;
     }
 
     protected void layoutChild(CoordinatorLayout parent, V child, int layoutDirection) {
-        // Let the parent lay it out by default
         parent.onLayoutChild(child, layoutDirection);
     }
 
     public boolean setTopAndBottomOffset(int offset) {
-        if (mViewOffsetHelper != null) {
-            return mViewOffsetHelper.setTopAndBottomOffset(offset);
+        if (this.viewOffsetHelper != null) {
+            return this.viewOffsetHelper.setTopAndBottomOffset(offset);
         } else {
-            mTempTopBottomOffset = offset;
+            this.tempTopBottomOffset = offset;
+            return false;
         }
-        return false;
     }
 
     public boolean setLeftAndRightOffset(int offset) {
-        if (mViewOffsetHelper != null) {
-            return mViewOffsetHelper.setLeftAndRightOffset(offset);
+        if (this.viewOffsetHelper != null) {
+            return this.viewOffsetHelper.setLeftAndRightOffset(offset);
         } else {
-            mTempLeftRightOffset = offset;
+            this.tempLeftRightOffset = offset;
+            return false;
         }
-        return false;
     }
 
     public int getTopAndBottomOffset() {
-        return mViewOffsetHelper != null ? mViewOffsetHelper.getTopAndBottomOffset() : 0;
+        return this.viewOffsetHelper != null ? this.viewOffsetHelper.getTopAndBottomOffset() : 0;
     }
 
     public int getLeftAndRightOffset() {
-        return mViewOffsetHelper != null ? mViewOffsetHelper.getLeftAndRightOffset() : 0;
+        return this.viewOffsetHelper != null ? this.viewOffsetHelper.getLeftAndRightOffset() : 0;
     }
 }

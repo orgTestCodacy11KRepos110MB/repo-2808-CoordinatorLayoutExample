@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <FrameLayout
+        android:id="@+id/id_uc_news_header_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        app:layout_behavior="@string/behavior_qq_browser_header_pager">
+
+
+        <com.xj.qqbroswer.behavior.base.NestedLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/holo_green_light"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/jsy"
+                android:text="WeatherPager"
+                android:textColor="@android:color/white" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/holo_blue_bright"
+                android:gravity="center"
+                android:text="Chat"
+                android:textColor="@android:color/black" />
+
+
+        </com.xj.qqbroswer.behavior.base.NestedLinearLayout>
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/behavior_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/behavior_contents">
+
+        <!-- <com.xj.qqbroswer.behavior.base.NestedLinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+
+             <TextView
+                 style="@style/TextAppearance.AppCompat.Title"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:background="@android:color/holo_red_dark"
+                 android:gravity="center"
+                 android:text="A"
+                 android:textColor="@android:color/white" />
+
+
+             <TextView
+                 style="@style/TextAppearance.AppCompat.Title"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:background="@android:color/holo_orange_dark"
+                 android:gravity="center"
+                 android:text="B"
+                 android:textColor="@android:color/white" />
+         </com.xj.qqbroswer.behavior.base.NestedLinearLayout>-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F0F4C3">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <!--
+        <android.support.v7.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/uc_news_header_title_height"
+            android:layout_marginTop="25dp"
+            android:background="@android:color/holo_blue_dark"
+            android:queryHint="搜索"
+            app:layout_behavior="@string/behavior_search">
+
+        </android.support.v7.widget.SearchView>
+    -->
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_back_black" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">QQBroswerDemo</string>
+
+    <string name="behavior_contents" translatable="false">com.xj.qqbroswer.behavior.QQBrowserContentBehavior</string>
+    <string name="behavior_qq_browser_header_pager" translatable="false">com.xj.qqbroswer.behavior.QQBrowserHeaderBehavior</string>
+    <string name="behavior_qq_browser_title" translatable="false">com.xj.qqbroswer.behavior.QQBrowserTitleBehavior</string>
+    <string name="behavior_qq_browser_news_tab" translatable="false">com.xj.qqbroswer.behavior.QQBrowserTabBehavior</string>
+    <string name="behavior_search" translatable="false">com.xj.qqbroswer.behavior.SearchBehavior</string>
+</resources>

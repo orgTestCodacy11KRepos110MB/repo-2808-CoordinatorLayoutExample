@@ -1,17 +1,17 @@
 ext {
     // Sdk and tools
     minSdkVersion = 15
-    targetSdkVersion = 24
+    targetSdkVersion = 28
 //    targetSdkVersion = 22
-    compileSdkVersion = 25
-    buildToolsVersion = '25.0.3'
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
     sourceCompatibilityVersion = JavaVersion.VERSION_1_8
     targetCompatibilityVersion = JavaVersion.VERSION_1_8
     okhttp3Version = '3.0.1'
-    supportLibrariesVersion = '25.2.0'
+    supportLibraryVersion = '27.1.0'
 
     // App dependencies
-    supportLibraryVersion = '25.2.0'
+    supportLibraryVersion = '27.1.0'
     guavaVersion = '18.0'
     junitVersion = '4.12'
     mockitoVersion = '1.10.19'
@@ -28,8 +28,8 @@ ext {
             okhttp3              : "com.squareup.okhttp3:okhttp:$okhttp3Version",
             mockWebServer        : "com.squareup.okhttp3:mockwebserver:$okhttp3Version",
             pollexor             : 'com.squareup:pollexor:2.0.0',
-            supportV4            : "com.android.support:support-v4:$supportLibrariesVersion",
-            supportAnnotations   : "com.android.support:support-annotations:$supportLibrariesVersion",
+            supportV4            : "com.android.support:support-v4:$supportLibraryVersion",
+            supportAnnotations   : "com.android.support:support-annotations:$supportLibraryVersion",
             junit                : 'junit:junit:4.10',
             fest                 : 'org.easytesting:fest-assert-core:2.0M10',
             festAndroid          : 'com.squareup:fest-android:1.0.6',
@@ -41,7 +41,7 @@ ext {
             "design"             : "com.android.support:design:$rootProject.supportLibraryVersion",
             "recyclerview-v7"    : "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion",
             "support-v4"         : "com.android.support:support-v4:$rootProject.supportLibraryVersion",
-            "percent"             : "com.android.support:percent:$rootProject.supportLibrariesVersion",
+            "percent"             : "com.android.support:percent:$rootProject.supportLibraryVersion",
             // 网络与rxjava
             "retrofit"           : 'com.squareup.retrofit2:retrofit:2.1.0',
             "converter-gson"     : 'com.squareup.retrofit2:converter-gson:2.1.0',
