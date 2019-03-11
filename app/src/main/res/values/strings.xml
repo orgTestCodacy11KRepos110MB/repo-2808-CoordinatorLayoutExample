@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ContraLayout</string>
+    <string name="app_name">CoordinatorLayoutExample</string>
     <string name="behavior_footer">com.xujun.contralayout.behavior.FooterBehavior</string>
     <string name="behavior_footer_depend_appbar">com.xujun.contralayout.behavior.BottomBarBehavior
     </string>
