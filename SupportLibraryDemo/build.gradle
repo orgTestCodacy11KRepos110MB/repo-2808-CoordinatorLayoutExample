@@ -25,7 +25,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     implementation rootProject.ext.dep["appcompat-v7"]
     implementation rootProject.ext.dep["recyclerview-v7"]
     implementation rootProject.ext.dep["cardview-v7"]
