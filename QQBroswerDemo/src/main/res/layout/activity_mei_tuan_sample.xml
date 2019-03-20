@@ -12,10 +12,9 @@
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:orientation="vertical"
-        app:layout_behavior="@string/behavior_qq_browser_header_pager">
+        app:layout_behavior="@string/behavior_header">
 
-
-        <com.xj.qqbroswer.behavior.base.NestedLinearLayout
+        <com.xj.behavior.widget.NestedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/header_height"
             android:orientation="vertical">
@@ -44,7 +43,7 @@
                 android:textColor="@android:color/black" />
 
 
-        </com.xj.qqbroswer.behavior.base.NestedLinearLayout>
+        </com.xj.behavior.widget.NestedLinearLayout>
     </FrameLayout>
 
 
@@ -55,7 +54,7 @@
         android:orientation="vertical"
         app:layout_behavior="@string/behavior_contents">
 
-        <!-- <com.xj.qqbroswer.behavior.base.NestedLinearLayout
+        <!-- <com.xj.behavior.widget.NestedLinearLayout
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:orientation="vertical">
@@ -80,7 +79,7 @@
                  android:gravity="center"
                  android:text="B"
                  android:textColor="@android:color/white" />
-         </com.xj.qqbroswer.behavior.base.NestedLinearLayout>-->
+         </com.xj.behavior.widget.NestedLinearLayout>-->
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"

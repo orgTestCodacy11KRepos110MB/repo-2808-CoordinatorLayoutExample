@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onButtonClick"
-        android:text="Chat"
+        android:text="MeituanSample"
         android:textAllCaps="false" />
 
 
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onButtonClick"
-        android:text="Chat"
+        android:text="overScroll Sample"
         android:textAllCaps="false" />
 
 
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onButtonClick"
-        android:text="Chat"
+        android:text="Test sample"
         android:textAllCaps="false" />
 
     <android.support.design.widget.FloatingActionButton

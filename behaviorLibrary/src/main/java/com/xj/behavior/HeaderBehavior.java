@@ -1,4 +1,4 @@
-package com.xj.qqbroswer.behavior;
+package com.xj.behavior;
 
 import android.content.Context;
 import android.os.SystemClock;
@@ -11,17 +11,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-import com.xj.qqbroswer.BuildConfig;
-import com.xj.qqbroswer.behavior.base.HeaderFlingRunnable;
-import com.xj.qqbroswer.behavior.base.NestedLinearLayout;
-import com.xj.qqbroswer.behavior.base.ViewOffsetBehavior;
+import com.xj.behavior.base.HeaderFlingRunnable;
+import com.xj.behavior.base.ViewOffsetBehavior;
+import com.xj.behavior.widget.NestedLinearLayout;
 
 import java.lang.ref.WeakReference;
 
 /**
  * Created by jun xu on 19-3-4
  */
-public class QQBrowserHeaderBehavior extends ViewOffsetBehavior {
+public class HeaderBehavior extends ViewOffsetBehavior {
 
     private static final String TAG = "GroupHeaderBehavior";
 
@@ -50,11 +49,11 @@ public class QQBrowserHeaderBehavior extends ViewOffsetBehavior {
     private boolean mLastStopIsClose;
 
 
-    public QQBrowserHeaderBehavior() {
+    public HeaderBehavior() {
         init();
     }
 
-    public QQBrowserHeaderBehavior(Context context, AttributeSet attrs) {
+    public HeaderBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         init();

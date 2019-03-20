@@ -1,4 +1,4 @@
-package com.xj.qqbroswer.behavior.base;
+package com.xj.behavior.base;
 
 /**
  * Copy from Android design library

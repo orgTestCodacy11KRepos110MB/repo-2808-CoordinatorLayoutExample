@@ -11,10 +11,10 @@
         android:id="@+id/id_uc_news_header_pager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/behavior_qq_browser_header_pager">
+        app:layout_behavior="@string/behavior_header">
 
 
-        <com.xj.qqbroswer.behavior.base.NestedLinearLayout
+        <com.xj.behavior.widget.NestedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/header_height"
             android:orientation="vertical">
@@ -30,7 +30,7 @@
                 android:textColor="@android:color/white" />
 
 
-        </com.xj.qqbroswer.behavior.base.NestedLinearLayout>
+        </com.xj.behavior.widget.NestedLinearLayout>
     </FrameLayout>
 
     <!-- ContentProvide 部分-->

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Behavior Library</string>
+    <string name="behavior_contents" translatable="false">com.xj.behavior.ContentBehavior</string>
+    <string name="behavior_header" translatable="false">com.xj.behavior.HeaderBehavior</string>
+</resources>

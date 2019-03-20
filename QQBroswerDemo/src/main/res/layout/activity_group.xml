@@ -15,7 +15,7 @@
         app:layout_behavior="com.xj.qqbroswer.behavior.GroupHeaderBehavior">
 
 
-        <com.xj.qqbroswer.behavior.base.NestedLinearLayout
+        <com.xj.behavior.widget.NestedLinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/header_height"
             android:orientation="vertical">
@@ -44,7 +44,7 @@
                 android:textColor="@android:color/black" />
 
 
-        </com.xj.qqbroswer.behavior.base.NestedLinearLayout>
+        </com.xj.behavior.widget.NestedLinearLayout>
     </FrameLayout>
 
 

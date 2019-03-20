@@ -12,8 +12,8 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.OverScroller;
 
+import com.xj.behavior.base.ViewOffsetBehavior;
 import com.xj.qqbroswer.BuildConfig;
-import com.xj.qqbroswer.behavior.base.ViewOffsetBehavior;
 
 import java.lang.ref.WeakReference;
 

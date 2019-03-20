@@ -1,4 +1,4 @@
-package com.xj.qqbroswer.behavior.base;
+package com.xj.behavior.base;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;

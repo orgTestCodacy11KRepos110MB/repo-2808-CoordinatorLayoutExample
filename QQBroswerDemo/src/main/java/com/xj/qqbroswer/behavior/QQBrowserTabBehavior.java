@@ -6,10 +6,10 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import com.xj.behavior.base.HeaderScrollingViewBehavior;
 import com.xj.qqbroswer.BuildConfig;
 import com.xj.qqbroswer.DemoApplication;
 import com.xj.qqbroswer.R;
-import com.xj.qqbroswer.behavior.base.HeaderScrollingViewBehavior;
 
 import java.util.List;
 

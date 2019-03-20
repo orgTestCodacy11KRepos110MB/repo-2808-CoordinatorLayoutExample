@@ -16,12 +16,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.xj.behavior.ContentBehavior;
+import com.xj.behavior.HeaderBehavior;
+import com.xj.behavior.base.HeaderFlingRunnable;
 import com.xj.qqbroswer.DemoApplication;
 import com.xj.qqbroswer.R;
 import com.xj.qqbroswer.adapter.RecyclerViewAdapter;
-import com.xj.qqbroswer.behavior.base.HeaderFlingRunnable;
-import com.xj.qqbroswer.behavior.QQBrowserContentBehavior;
-import com.xj.qqbroswer.behavior.QQBrowserHeaderBehavior;
 import com.xj.qqbroswer.utils.StatusBarUtils;
 import com.xj.qqbroswer.utils.ViewUtils;
 
@@ -33,10 +33,10 @@ public class MeituanSampleActivity extends AppCompatActivity {
 
     private FrameLayout mIdUcNewsHeaderPager;
     private RecyclerView mRecyclerView;
-    private QQBrowserHeaderBehavior mHeaderBehavior;
+    private HeaderBehavior mHeaderBehavior;
     private View mRlTitle;
     private float mTotal;
-    private QQBrowserContentBehavior mContentBehavior;
+    private ContentBehavior mContentBehavior;
     private int mStatusbarHeight;
     private ImageView mIv;
     private LinearLayout mBehaviorContent;
@@ -96,17 +96,17 @@ public class MeituanSampleActivity extends AppCompatActivity {
     }
 
     private void initBehavior() {
-        mHeaderBehavior = (QQBrowserHeaderBehavior)
+        mHeaderBehavior = (HeaderBehavior)
                 ((CoordinatorLayout.LayoutParams) findViewById(R.id.id_uc_news_header_pager)
                         .getLayoutParams()).getBehavior();
         Resources resources = DemoApplication.getAppContext().getResources();
-        mContentBehavior = (QQBrowserContentBehavior) ((CoordinatorLayout.LayoutParams) findViewById(R.id.behavior_content).getLayoutParams()).getBehavior();
+        mContentBehavior = (ContentBehavior) ((CoordinatorLayout.LayoutParams) findViewById(R.id.behavior_content).getLayoutParams()).getBehavior();
         mHeaderBehavior.setHeaderOffsetRange(-(int) resources.getDimension(R.dimen.header_height));
         mHeaderBehavior.setCouldScroollOpen(true);
         mContentBehavior.setDependsLayoutId(R.id.id_uc_news_header_pager);
         mContentBehavior.setFinalY((int) (resources.getDimension(R.dimen.header_title_height) + mStatusbarHeight));
 
-        mHeaderBehavior.setPagerStateListener(new QQBrowserHeaderBehavior.OnPagerStateListener() {
+        mHeaderBehavior.setPagerStateListener(new HeaderBehavior.OnPagerStateListener() {
             @Override
             public void onPagerClosed() {
                 Log.i(TAG, "onPagerClosed: onPagerClosed =");

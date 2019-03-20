@@ -15,9 +15,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.xj.behavior.ContentBehavior;
+import com.xj.behavior.HeaderBehavior;
 import com.xj.qqbroswer.adapter.TestFragmentAdapter;
-import com.xj.qqbroswer.behavior.QQBrowserContentBehavior;
-import com.xj.qqbroswer.behavior.QQBrowserHeaderBehavior;
 import com.xj.qqbroswer.utils.StatusBarUtils;
 
 import java.util.ArrayList;
@@ -36,8 +36,8 @@ public class QQBrowserDemoActivity extends AppCompatActivity implements TabLayou
     private TabLayout mTableLayout;
     private List<TestFragment> mFragments;
 
-    private QQBrowserHeaderBehavior mHeaderBehavior;
-    private QQBrowserContentBehavior mContentBehavior;
+    private HeaderBehavior mHeaderBehavior;
+    private ContentBehavior mContentBehavior;
 
     public static Intent newIntent(Context context) {
         Intent intent = new Intent(context, QQBrowserDemoActivity.class);
@@ -81,8 +81,8 @@ public class QQBrowserDemoActivity extends AppCompatActivity implements TabLayou
 
     private void initBehavior() {
         Resources resources = DemoApplication.getAppContext().getResources();
-        mHeaderBehavior = (QQBrowserHeaderBehavior) ((CoordinatorLayout.LayoutParams) findViewById(R.id.id_uc_news_header_pager).getLayoutParams()).getBehavior();
-        mHeaderBehavior.setPagerStateListener(new QQBrowserHeaderBehavior.OnPagerStateListener() {
+        mHeaderBehavior = (HeaderBehavior) ((CoordinatorLayout.LayoutParams) findViewById(R.id.id_uc_news_header_pager).getLayoutParams()).getBehavior();
+        mHeaderBehavior.setPagerStateListener(new HeaderBehavior.OnPagerStateListener() {
             @Override
             public void onPagerClosed() {
                 if (BuildConfig.DEBUG) {
@@ -109,7 +109,7 @@ public class QQBrowserDemoActivity extends AppCompatActivity implements TabLayou
         // 设置 header close 的时候是否能够通过滑动打开
         mHeaderBehavior.setCouldScroollOpen(false);
 
-        mContentBehavior = (QQBrowserContentBehavior) ((CoordinatorLayout.LayoutParams) findViewById(R.id.behavior_content).getLayoutParams()).getBehavior();
+        mContentBehavior = (ContentBehavior) ((CoordinatorLayout.LayoutParams) findViewById(R.id.behavior_content).getLayoutParams()).getBehavior();
         // 设置依赖于哪一个 id，这里要设置为 Header layout id
         mContentBehavior.setDependsLayoutId(R.id.id_uc_news_header_pager);
         // 设置 content 部分最终停留的位置

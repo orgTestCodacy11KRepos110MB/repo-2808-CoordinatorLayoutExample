@@ -1,4 +1,4 @@
-package com.xj.qqbroswer.behavior;
+package com.xj.behavior;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,12 +7,12 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import com.xj.qqbroswer.behavior.base.HeaderScrollingViewBehavior;
+import com.xj.behavior.base.HeaderScrollingViewBehavior;
 
 import java.util.List;
 
 
-public class QQBrowserContentBehavior extends HeaderScrollingViewBehavior {
+public class ContentBehavior extends HeaderScrollingViewBehavior {
 
     private static final String TAG = "GroupContentBehavior";
     private int mDependsLayoutId;
@@ -20,10 +20,10 @@ public class QQBrowserContentBehavior extends HeaderScrollingViewBehavior {
     private int mHeaderOffsetRange;
 
 
-    public QQBrowserContentBehavior() {
+    public ContentBehavior() {
     }
 
-    public QQBrowserContentBehavior(Context context, AttributeSet attrs) {
+    public ContentBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

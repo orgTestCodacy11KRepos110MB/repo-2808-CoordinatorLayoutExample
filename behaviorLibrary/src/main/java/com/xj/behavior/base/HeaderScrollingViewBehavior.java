@@ -1,8 +1,7 @@
-package com.xj.qqbroswer.behavior.base;
+package com.xj.behavior.base;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewCompat;
@@ -131,7 +130,7 @@ public abstract class HeaderScrollingViewBehavior extends ViewOffsetBehavior<Vie
     }
 
     /**
-     * Set the distance that this view should overlap any {@link AppBarLayout}.
+     * Set the distance that this view should overlap any
      *
      * @param overlayTop the distance in px
      */
@@ -140,7 +139,7 @@ public abstract class HeaderScrollingViewBehavior extends ViewOffsetBehavior<Vie
     }
 
     /**
-     * Returns the distance that this view should overlap any {@link AppBarLayout}.
+     * Returns the distance that this view should overlap any
      */
     public final int getOverlayTop() {
         return mOverlayTop;
