@@ -1,1 +1,3 @@
-include ':app', ':StickyNavLayout-master', ':SupportLibraryDemo', ':CoordinatorLayoutDemo', ':UcMainPagerDemo', ':AlipayHomeSample', ':QQBroswerDemo', ':myapplication', ':behaviorLibrary'
+include ':app', ':StickyNavLayout-master', ':SupportLibraryDemo',
+        ':CoordinatorLayoutDemo', ':UcMainPagerDemo', ':AlipayHomeSample',
+        ':QQBroswerDemo', ':behaviorLibrary',':submodules:BaseLibrary'

@@ -38,4 +38,5 @@ dependencies {
     implementation rootProject.ext.dep["appcompat-v7"]
     implementation rootProject.ext.dep["design"]
     implementation project(':behaviorLibrary')
+    implementation project(':submodules:BaseLibrary')
 }
