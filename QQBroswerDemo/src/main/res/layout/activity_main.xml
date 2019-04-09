@@ -45,6 +45,15 @@
         android:text="Test sample"
         android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/btn_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="RecyclerView 回弹"
+        android:textAllCaps="false" />
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_new_chat"
         android:layout_width="56dp"

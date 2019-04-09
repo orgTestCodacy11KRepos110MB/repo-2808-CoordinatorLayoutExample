@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.xj.qqbroswer.meituan.MeituanSampleActivity;
 import com.xj.qqbroswer.overscroll.OverScroollSample;
+import com.xj.qqbroswer.recycler.RecyclerSampleActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btn_test:
                 startActivity(new Intent(this, GroupActivity.class));
+                break;
+
+
+            case R.id.btn_recycler:
+                startActivity(new Intent(this, RecyclerSampleActivity.class));
                 break;
             default:
                 break;
