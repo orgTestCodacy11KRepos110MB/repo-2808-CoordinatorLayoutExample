@@ -1,9 +1,9 @@
 
 ## 微信公众号
 
-**Android 技术人(stormjun94)，希望让你看到程序猿不同的一面，除了分享 Coding，，还有职场心得，面试经验，学习心得，人生感悟等等。希望通过该公众号，让大家看到，我们不只会敲代码，我们还会。。。。。。**
+**程序员徐公(stormjun94)，希望让你看到程序猿不同的一面，除了分享 Coding，，还有职场心得，面试经验，学习心得，人生感悟等等。希望通过该公众号，让大家看到，我们不只会敲代码，我们还会。。。。。。**
 
-![Android 技术人](http://upload-images.jianshu.io/upload_images/2050203-bf3eca3c1cf265e4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://gitee.com/gdutxiaoxu/blog-picture/raw/master/21/02/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BE%90%E5%85%AC%20(1).png)
 
 ---
 
