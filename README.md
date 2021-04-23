@@ -5,6 +5,27 @@
 2. 仿 QQ 浏览器
 3. 仿美团商家首页
 
+
+
+
+## 下面我们一起先来看一下我们实现的效果图
+
+仿 QQ 浏览器
+
+![](https://raw.githubusercontent.com/gdutxiaoxu/blog_pic/master/21/01aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE2LzE2ZDM5ZGJkNTFiZGJlMzc.gif)
+
+
+仿美图商家详情页面的：
+
+![](https://raw.githubusercontent.com/gdutxiaoxu/blog_pic/master/21/01aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE2LzE2ZDM5ZGJkNTFmNTNhYjU.gif)
+
+
+仿新浪微博效果图：
+
+![](https://raw.githubusercontent.com/gdutxiaoxu/blog_pic/master/21/01aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE2LzE2ZDM5ZGJkNTFhM2QwZTc.gif)
+
+
+
 ## 相关博客
 
 
@@ -24,60 +45,6 @@
 [自定义 behavior - 完美仿 QQ 浏览器首页，美团商家详情页](https://blog.csdn.net/gdutxiaoxu/article/details/88383135)
 
 
-----
-
-
-## 下面我们一起先来看一下我们实现的效果图
-
-仿 QQ 浏览器
-
-![image](https://ws4.sinaimg.cn/mw690/9fe4afa0ly1g0xt27m4jrg208q0if46h.gif)
-
-
-仿美图商家详情页面的：
-
-![image](https://ws3.sinaimg.cn/mw690/9fe4afa0gy1g0xt13yy9bg208q0ifh5w.gif)
-
-
-仿新浪微博效果图：
-
-![仿新浪微博效果图](https://ww1.sinaimg.cn/mw690/9fe4afa0gy1ffhsjh1sgpg208r0hq1kx.gif)
-
-
-
- 结合ToolBar
-
-![](http://ww4.sinaimg.cn/mw690/9fe4afa0jw1f8xclhwlhig208s0etthy.gif)
-
- 结合ViewPager
-
-![ViewPager](http://7xvjnq.com2.z0.glb.qiniucdn.com/16-10-18/99961159.jpg)
-
-
- 结合ViewPager的视觉特差
-
-
-![](http://ww2.sinaimg.cn/mw690/9fe4afa0jw1f8xcke8ehkg208s0etnl9.gif)
-
- **仿知乎**
-
-![](http://7xvjnq.com2.z0.glb.qiniucdn.com/public/16-12-4/86648455.jpg)
-
-![](http://7xvjnq.com2.z0.glb.qiniucdn.com/public/16-12-4/55314155.jpg)
-
-**自定义 Behavior 实现 FloatingActionButton 的隐藏与展示**
-
-- 缩放隐藏的
-
-![](http://7xvjnq.com2.z0.glb.qiniucdn.com/public/16-12-4/95311635.jpg)
-
-- 向上向下隐藏的
-
-![](http://7xvjnq.com2.z0.glb.qiniucdn.com/public/16-12-4/57255134.jpg)
-
-- 左右隐藏的
-
-![](http://ww3.sinaimg.cn/large/9fe4afa0gw1fakqs333ymg208s0gjq6z.gif)
 
 ## 题外话
 
