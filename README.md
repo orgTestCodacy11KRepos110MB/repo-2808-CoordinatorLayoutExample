@@ -1,11 +1,9 @@
+## 简介
 
-## 微信公众号
-
-**程序员徐公(stormjun94)，希望让你看到程序猿不同的一面，除了分享 Coding，，还有职场心得，面试经验，学习心得，人生感悟等等。希望通过该公众号，让大家看到，我们不只会敲代码，我们还会。。。。。。**
-
-![](https://gitee.com/gdutxiaoxu/blog-picture/raw/master/21/02/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BE%90%E5%85%AC%20(1).png)
-
----
+这个库，主要自定义 CoordinatorLayout behavior，来实现一些酷炫的效果。比如
+1. 仿新浪微博首页
+2. 仿 QQ 浏览器
+3. 仿美团商家首页
 
 ## 相关博客
 
@@ -99,3 +97,12 @@
 [ViewPager，ScrollView 嵌套ViewPager滑动冲突解决](https://blog.csdn.net/gdutxiaoxu/article/details/52939127)
 
 [自定义 behavior - 完美仿 QQ 浏览器首页，美团商家详情页](https://blog.csdn.net/gdutxiaoxu/article/details/88383135)
+
+
+## 微信公众号
+
+**程序员徐公(stormjun94)，希望让你看到程序猿不同的一面，除了分享 Coding，，还有职场心得，面试经验，学习心得，人生感悟等等。希望通过该公众号，让大家看到，我们不只会敲代码，我们还会。。。。。。**
+
+![](https://gitee.com/gdutxiaoxu/blog-picture/raw/master/21/02/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BE%90%E5%85%AC%20(1).png)
+
+---
