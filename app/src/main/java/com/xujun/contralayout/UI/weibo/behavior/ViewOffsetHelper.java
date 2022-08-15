@@ -2,7 +2,7 @@ package com.xujun.contralayout.UI.weibo.behavior;
 
 
 import android.os.Build;
-import android.support.v4.view.ViewCompat;
+import androidx.core.view.ViewCompat;
 import android.view.View;
 import android.view.ViewParent;
 

@@ -36,12 +36,12 @@ ext {
             robolectric          : 'org.robolectric:robolectric:3.1',
             mockito              : 'org.mockito:mockito-core:1.9.5',
             // Android support 相关库
-            "appcompat-v7"       : "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion",
-            "cardview-v7"        : "com.android.support:cardview-v7:$rootProject.supportLibraryVersion",
-            "design"             : "com.android.support:design:$rootProject.supportLibraryVersion",
-            "recyclerview-v7"    : "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion",
+            "appcompat-v7"       : 'androidx.appcompat:appcompat:1.0.0',
+            "cardview-v7"        : 'androidx.cardview:cardview:1.0.0',
+            "design"             : 'com.google.android.material:material:1.0.0',
+            "recyclerview-v7"    : 'androidx.recyclerview:recyclerview:1.0.0',
             "support-v4"         : "com.android.support:support-v4:$rootProject.supportLibraryVersion",
-            "percent"             : "com.android.support:percent:$rootProject.supportLibraryVersion",
+            "percent"             : 'androidx.percentlayout:percentlayout:1.0.0',
             // 网络与rxjava
             "retrofit"           : 'com.squareup.retrofit2:retrofit:2.1.0',
             "converter-gson"     : 'com.squareup.retrofit2:converter-gson:2.1.0',

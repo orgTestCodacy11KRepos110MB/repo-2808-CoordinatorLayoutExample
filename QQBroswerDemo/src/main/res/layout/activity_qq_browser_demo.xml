@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -41,7 +41,7 @@
         android:orientation="vertical"
         app:layout_behavior="@string/behavior_contents">
 
-        <android.support.design.widget.TabLayout
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/id_uc_news_tab"
             android:layout_width="match_parent"
             android:layout_height="@dimen/tabs_height"
@@ -51,13 +51,13 @@
             app:tabSelectedTextColor="@color/colorPrimaryLight"
             app:tabTextColor="@color/colorPrimaryIcons" />
 
-        <android.support.v4.view.ViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/id_uc_news_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#F0F4C3">
 
-        </android.support.v4.view.ViewPager>
+        </androidx.viewpager.widget.ViewPager>
     </LinearLayout>
 
     <!--search 部分-->
@@ -66,7 +66,7 @@
         android:layout_height="@dimen/header_title_height"
         app:layout_behavior="@string/behavior_search">
 
-        <android.support.v7.widget.SearchView
+        <androidx.appcompat.widget.SearchView
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
@@ -76,9 +76,9 @@
             app:defaultQueryHint="搜索"
             app:queryHint="搜索">
 
-        </android.support.v7.widget.SearchView>
+        </androidx.appcompat.widget.SearchView>
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
@@ -90,4 +90,4 @@
     </RelativeLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,6 +1,6 @@
 package com.xujun.contralayout;
 
-import android.support.design.widget.CoordinatorLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import android.view.View;
 import android.widget.ImageView;
 

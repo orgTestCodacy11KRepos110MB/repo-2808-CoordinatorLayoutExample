@@ -1,7 +1,7 @@
 package com.xj.behavior.base;
 
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.view.ViewCompat;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.ViewCompat;
 import android.view.View;
 import android.widget.OverScroller;
 

@@ -1,7 +1,7 @@
 package com.xujun.contralayout.UI.bottomsheet;
 
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.BottomSheetDialog;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import android.view.View;
 
 import com.xujun.contralayout.R;

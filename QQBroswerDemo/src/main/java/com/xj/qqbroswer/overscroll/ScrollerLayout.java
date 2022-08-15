@@ -1,7 +1,7 @@
 package com.xj.qqbroswer.overscroll;
 
 import android.content.Context;
-import android.support.v4.view.ViewConfigurationCompat;
+import androidx.core.view.ViewConfigurationCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
