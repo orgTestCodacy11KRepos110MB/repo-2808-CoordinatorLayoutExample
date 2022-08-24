@@ -9,4 +9,5 @@
     <dimen name="tabs_height">45dip</dimen>
     <dimen name="header_height">400dp</dimen>
     <dimen name="search_margin_top">200dp</dimen>
+    <dimen name="fragment_height">250dp</dimen>
 </resources>

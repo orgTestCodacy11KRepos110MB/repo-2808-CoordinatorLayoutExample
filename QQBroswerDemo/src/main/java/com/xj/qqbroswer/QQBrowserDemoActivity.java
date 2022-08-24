@@ -5,12 +5,16 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
+
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -19,6 +23,7 @@ import com.xj.behavior.ContentBehavior;
 import com.xj.behavior.HeaderBehavior;
 import com.xj.qqbroswer.adapter.TestFragmentAdapter;
 import com.xj.qqbroswer.utils.StatusBarUtils;
+import com.xj.qqbroswer.web.X5WebFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +39,7 @@ public class QQBrowserDemoActivity extends AppCompatActivity implements TabLayou
     private static final String TAG = "MainActivity";
     private ViewPager mNewsPager;
     private TabLayout mTableLayout;
-    private List<TestFragment> mFragments;
+    private List<Fragment> mFragments;
 
     private HeaderBehavior mHeaderBehavior;
     private ContentBehavior mContentBehavior;
@@ -61,10 +66,16 @@ public class QQBrowserDemoActivity extends AppCompatActivity implements TabLayou
         initBehavior();
         mNewsPager = (ViewPager) findViewById(R.id.id_uc_news_content);
         mTableLayout = (TabLayout) findViewById(R.id.id_uc_news_tab);
-        mFragments = new ArrayList<TestFragment>();
+        mFragments = new ArrayList<Fragment>();
         for (int i = 0; i < 4; i++) {
-            mFragments.add(TestFragment.newInstance(String.valueOf(i), false));
-            mTableLayout.addTab(mTableLayout.newTab().setText("Tab" + i));
+            if (i == 0) {
+                mFragments.add(X5WebFragment.newInstance("https://ds.163.com/"));
+                mTableLayout.addTab(mTableLayout.newTab().setText("Tab" + i));
+            } else {
+                mFragments.add(TestFragment.newInstance(String.valueOf(i), false));
+                mTableLayout.addTab(mTableLayout.newTab().setText("Tab" + i));
+            }
+
         }
         mTableLayout.setTabMode(TabLayout.MODE_FIXED);
         mTableLayout.setOnTabSelectedListener(this);
@@ -160,7 +171,10 @@ public class QQBrowserDemoActivity extends AppCompatActivity implements TabLayou
 
     private void setFragmentRefreshEnabled(boolean enabled) {
         for (Fragment fragment : mFragments) {
-            ((TestFragment) fragment).setRefreshEnable(enabled);
+            if (fragment instanceof TestFragment) {
+                ((TestFragment) fragment).setRefreshEnable(enabled);
+            }
+
         }
     }
 

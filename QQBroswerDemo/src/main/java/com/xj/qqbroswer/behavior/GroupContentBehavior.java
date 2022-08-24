@@ -1,7 +1,9 @@
 package com.xj.qqbroswer.behavior;
 
 import android.content.Context;
+
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -83,9 +85,10 @@ public class GroupContentBehavior extends HeaderScrollingViewBehavior {
     protected int getScrollRange(View v) {
         if (isDependOn(v)) {
             int finalY = getFinalY();
-            Log.i(TAG, "getScrollRange: finalY =" + finalY);
+            Log.i(TAG, "getScrollRange: finalY =" + finalY + "v is " + v);
             return Math.max(0, v.getMeasuredHeight() - finalY);
         } else {
+            Log.i(TAG, "getScrollRange: + " + v);
             return super.getScrollRange(v);
         }
     }

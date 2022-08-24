@@ -1,0 +1,33 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        app:layout_behavior="com.xujun.contralayout.web.jinxuan.x5.DisableAbleAppBarLayoutBehavior"
+        android:layout_height="250dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorPrimary"
+            android:scaleType="fitXY"
+            android:src="@drawable/tangyan"
+            app:layout_scrollFlags="scroll" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.tencent.smtt.sdk.WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.xujun.contralayout.web.MyScrollBehavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

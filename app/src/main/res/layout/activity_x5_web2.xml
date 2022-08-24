@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/layout_common_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:id="@+id/container_jinxuan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="精选" />
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/tab_discovery_select_search" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/container_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/btn_back" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smart.refresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="MissingDefaultResource">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="vertical"
+                app:layout_behavior="com.xujun.contralayout.web.jinxuan.x5.DisableAbleAppBarLayoutBehavior">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="?attr/colorPrimary"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tangyan"
+                    app:layout_scrollFlags="scroll" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:tabIndicatorColor="@color/colorAccent"
+                    app:tabIndicatorHeight="4dp"
+                    app:tabSelectedTextColor="#000"
+                    app:tabTextColor="#fff" />
+
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.viewpager.widget.ViewPager
+
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_margin="15dp"
+                android:src="@mipmap/ic_home_chat"
+                app:backgroundTint="@color/colorPrimary" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>

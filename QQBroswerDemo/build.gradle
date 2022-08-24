@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
 
@@ -21,6 +22,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 configurations.all {
@@ -39,4 +45,6 @@ dependencies {
     implementation rootProject.ext.dep["design"]
     implementation project(':behaviorLibrary')
     implementation project(':submodules:BaseLibrary')
+    implementation 'com.tencent.tbs:tbssdk:44216'
+
 }

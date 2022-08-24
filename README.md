@@ -44,6 +44,8 @@
 
 [自定义 behavior - 完美仿 QQ 浏览器首页，美团商家详情页](https://blog.csdn.net/gdutxiaoxu/article/details/88383135)
 
+[Android CoordinatorLayout之自定义Behavior](https://juejin.cn/post/6844903519267356680)
+
 
 
 
