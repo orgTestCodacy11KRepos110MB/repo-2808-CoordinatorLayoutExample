@@ -9,31 +9,36 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.appbar.AppBarLayout
+import com.xujun.contralayout.web.behavior.DisableAbleAppBarLayoutBehavior
+import com.xujun.contralayout.web.behavior.INestedScroll
+import com.netease.cc.main.fragment.jinxuan.x5.X5ProxyWebViewClientExtension
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest
 import com.tencent.smtt.export.external.interfaces.WebResourceResponse
 import com.tencent.smtt.sdk.WebSettings
 import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
 import com.xujun.contralayout.R
-import com.xujun.contralayout.web.jinxuan.x5.DisableAbleAppBarLayoutBehavior
-import com.xujun.contralayout.web.jinxuan.x5.X5CallBackClient
+import com.xujun.contralayout.web.x5.X5CallBackClient
 import java.io.File
 import java.io.FileInputStream
 import java.io.InputStream
 
-
-class DashenX5WebFragment : Fragment() {
+/**
+ *  博客地址： https://blog.csdn.net/gdutxiaoxu
+ *  公众号： 徐公
+ */
+class NestedX5WebFragment : Fragment() {
 
     var iX5WebListener: IX5WebListener? = null
 
-    private val TAG = "DashenX5WebFragment"
+    private val TAG = "NestedX5WebFragment"
 
     private var url: String? = null
     private var param2: String? = null
     private lateinit var webView: WebView
     private lateinit var appBarLayout: AppBarLayout
 
-    var iNestedScroll: DisableAbleAppBarLayoutBehavior.INestedScroll? = null
+    var iNestedScroll: INestedScroll? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,20 +66,23 @@ class DashenX5WebFragment : Fragment() {
         val layoutParams = appBarLayout.layoutParams as CoordinatorLayout.LayoutParams
         val disableAbleAppBarLayoutBehavior =
             layoutParams.behavior as DisableAbleAppBarLayoutBehavior
-        disableAbleAppBarLayoutBehavior.iNestedScroll = object : DisableAbleAppBarLayoutBehavior.INestedScroll{
-            override fun onNestedPreScroll(
-                coordinatorLayout: CoordinatorLayout,
-                child: AppBarLayout,
-                target: View,
-                dx: Int,
-                dy: Int,
-                consumed: IntArray,
-                type: Int
-            ) {
-                iNestedScroll?.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed, type)
-            }
+        disableAbleAppBarLayoutBehavior.iNestedScroll =
+            object : INestedScroll {
+                override fun onNestedPreScroll(
+                    dx: Int,
+                    dy: Int,
+                    consumed: IntArray,
+                    type: Int
+                ) {
+                    iNestedScroll?.onNestedPreScroll(
+                        dx,
+                        dy,
+                        consumed,
+                        type
+                    )
+                }
 
-        }
+            }
         Log.i(TAG, "onViewCreated: url is $url")
         val webSetting: WebSettings = webView.getSettings()
         webSetting.javaScriptEnabled = true
@@ -148,7 +156,7 @@ class DashenX5WebFragment : Fragment() {
                 webView
             )
 
-        webView.webViewClientExtension= X5ProxyWebViewClientExtension(callbackClient)
+        webView.webViewClientExtension = X5ProxyWebViewClientExtension(callbackClient)
         webView.setWebViewCallbackClient(callbackClient)
     }
 
@@ -167,7 +175,7 @@ class DashenX5WebFragment : Fragment() {
 
         @JvmStatic
         fun newInstance(url: String) =
-            DashenX5WebFragment().apply {
+            NestedX5WebFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_URL, url)
                 }

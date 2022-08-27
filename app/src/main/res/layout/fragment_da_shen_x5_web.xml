@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        app:layout_behavior="com.xujun.contralayout.web.jinxuan.x5.DisableAbleAppBarLayoutBehavior"
+        app:layout_behavior="com.xujun.contralayout.web.behavior.DisableAbleAppBarLayoutBehavior"
         android:layout_height="250dp">
 
         <ImageView

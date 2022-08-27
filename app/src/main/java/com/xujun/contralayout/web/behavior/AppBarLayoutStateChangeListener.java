@@ -1,10 +1,10 @@
-package com.xujun.contralayout.web.jinxuan.x5;
+package com.xujun.contralayout.web.behavior;
 
 import com.google.android.material.appbar.AppBarLayout;
 
 public class AppBarLayoutStateChangeListener implements AppBarLayout.OnOffsetChangedListener {
 
-    enum State {
+    public enum State {
         EXPANDED,//展开
         COLLAPSED,//折叠
         INTERMEDIATE//中间状态
@@ -32,7 +32,9 @@ public class AppBarLayoutStateChangeListener implements AppBarLayout.OnOffsetCha
         }
     }
 
-    public void onStateChanged(AppBarLayout appBarLayout, State state){
+    public void onStateChanged(AppBarLayout appBarLayout, State state) {
 
     }
+
+
 }

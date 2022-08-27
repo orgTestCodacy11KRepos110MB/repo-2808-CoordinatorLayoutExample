@@ -1,29 +1,25 @@
 package com.xujun.contralayout.web
 
-import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
-import com.google.android.material.tabs.TabLayout
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.tabs.TabLayout
+import com.xujun.contralayout.web.behavior.DisableAbleAppBarLayoutBehavior
 import com.xujun.contralayout.FragmentTab
 import com.xujun.contralayout.R
 import com.xujun.contralayout.base.BasePagerAdapter
-import com.xujun.contralayout.web.jinxuan.x5.DisableAbleAppBarLayoutBehavior
-import com.xujun.contralayout.web.jinxuan.x5.HeaderNestedScroll
-import java.util.ArrayList
 
-class WebViewPagerActivity : AppCompatActivity() {
-    lateinit var mViewPager: ViewPager
+class SimpleWebViewPagerActivity2 : AppCompatActivity() {
+    var mViewPager: ViewPager? = null
 
-    private val TAG = "WebViewPagerActivity"
-
-    private lateinit var mTabLayout: TabLayout
+    private var mTabLayout: TabLayout? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_x5_web)
+        setContentView(R.layout.activity_simple_web2)
+
         // 第一步，初始化ViewPager和TabLayout
         mViewPager = findViewById<View>(R.id.viewpager) as ViewPager
         mTabLayout = findViewById<View>(R.id.tabs) as TabLayout
@@ -33,18 +29,23 @@ class WebViewPagerActivity : AppCompatActivity() {
     private fun setupViewPager() {
         val arrayList = ArrayList<FragmentTab>()
         val fragment =
-            DashenX5WebFragment.newInstance("https://m.ds.163.com/")
-        fragment.iNestedScroll = HeaderNestedScroll(mTabLayout, mViewPager)
+            SimpleWebFragment.newInstance("https://juejin.cn/user/2207475076966584/posts")
+        fragment.iX5WebListener = object : IX5WebListener {
+            override fun onClick() {
+                TODO("Not yet implemented")
+            }
+
+            override fun canGoBack(canGoBack: Boolean) {
+
+            }
+
+        }
         arrayList.add(
-            FragmentTab(
-                "主页",
-                fragment
-            )
+            FragmentTab("主页", fragment)
         )
         arrayList.add(
             FragmentTab(
-                "github",
-                X5WebFragment.newInstance("https://gdutxiaoxu.github.io/")
+                "github", SimpleWebFragment.newInstance("https://gdutxiaoxu.github.io/")
             )
         )
         // 第二步：为ViewPager设置适配器
@@ -52,7 +53,9 @@ class WebViewPagerActivity : AppCompatActivity() {
         mViewPager!!.adapter = adapter
         //  第三步：将ViewPager与TableLayout 绑定在一起
         mTabLayout!!.setupWithViewPager(mViewPager)
-
     }
+}
 
+fun View.setViewVisible(isVisible: Boolean) {
+    visibility = if (isVisible) View.VISIBLE else View.GONE
 }

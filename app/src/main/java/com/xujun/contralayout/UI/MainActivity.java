@@ -31,8 +31,8 @@ import com.xujun.contralayout.UI.zhihu.ZhiHuHomeActivity;
 import com.xujun.contralayout.base.BaseMVPActivity;
 import com.xujun.contralayout.base.mvp.IBasePresenter;
 import com.xujun.contralayout.base.permissions.PermissonListener;
-import com.xujun.contralayout.web.WebViewPagerActivity;
-import com.xujun.contralayout.web.WebViewPagerActivity2;
+import com.xujun.contralayout.web.X5WebViewPagerActivity;
+import com.xujun.contralayout.web.SimpleWebViewPagerActivity2;
 
 import java.util.List;
 
@@ -198,10 +198,10 @@ public class MainActivity extends BaseMVPActivity {
                 break;
 
             case R.id.btn_webview_sample:
-                jump(WebViewPagerActivity.class);
+                jump(SimpleWebViewPagerActivity2.class);
                 break;
             case R.id.btn_webview_sample2:
-                jump(WebViewPagerActivity2.class);
+                jump(X5WebViewPagerActivity.class);
                 break;
 
 

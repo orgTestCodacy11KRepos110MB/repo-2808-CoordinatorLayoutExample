@@ -12,7 +12,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/bg_tab_select" />
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="X5 WebView"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -25,8 +35,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="?attr/colorPrimary"
+            android:background="@color/colorAccent"
             app:tabIndicatorColor="@color/colorAccent"
             app:tabIndicatorHeight="4dp"
             app:tabSelectedTextColor="#000"

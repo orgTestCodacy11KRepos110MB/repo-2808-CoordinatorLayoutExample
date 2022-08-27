@@ -1,8 +1,6 @@
-package com.xujun.contralayout.web.jinxuan.x5;
+package com.xujun.contralayout.web.x5;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -10,17 +8,17 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewParent;
 import android.widget.OverScroller;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.NestedScrollingChild3;
 import androidx.core.view.NestedScrollingChildHelper;
 import androidx.core.view.ViewCompat;
-
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewCallbackClient;
 
-
+/**
+ * 解决 X5 WebView  的 嵌套滑动
+ */
 public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackClient {
 
     View view;
@@ -85,7 +83,7 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
 
     private void onSecondaryPointerUp(MotionEvent ev) {
         final int pointerIndex = (ev.getAction() & MotionEvent.ACTION_POINTER_INDEX_MASK)
-                >> MotionEvent.ACTION_POINTER_INDEX_SHIFT;
+            >> MotionEvent.ACTION_POINTER_INDEX_SHIFT;
         final int pointerId = ev.getPointerId(pointerIndex);
         if (pointerId == mActivePointerId) {
             final int newPointerIndex = pointerIndex == 0 ? 1 : 0;
@@ -100,10 +98,10 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
     private void fling(int velocityY) {
         int height = view.getHeight();
         mScroller.fling(getScrollX(), getScrollY(), // start
-                0, velocityY, // velocities
-                0, 0, // x
-                Integer.MIN_VALUE, Integer.MAX_VALUE, // y
-                0, height / 2);
+            0, velocityY, // velocities
+            0, 0, // x
+            Integer.MIN_VALUE, Integer.MAX_VALUE, // y
+            0, height / 2);
         runAnimatedScroll(true);
     }
 
@@ -195,23 +193,23 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
 
     @Override
     public boolean dispatchNestedScroll(int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed,
-                                        int[] offsetInWindow) {
+        int[] offsetInWindow) {
         return dispatchNestedScroll(dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed,
-                offsetInWindow, ViewCompat.TYPE_TOUCH);
+            offsetInWindow, ViewCompat.TYPE_TOUCH);
     }
 
     @Override
     public boolean dispatchNestedScroll(int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed,
-                                        int[] offsetInWindow, int type) {
+        int[] offsetInWindow, int type) {
         return mChildHelper.dispatchNestedScroll(dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed,
-                offsetInWindow, type);
+            offsetInWindow, type);
     }
 
     @Override
     public void dispatchNestedScroll(int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed,
-                                     @Nullable int[] offsetInWindow, int type, @NonNull int[] consumed) {
+        @Nullable int[] offsetInWindow, int type, @NonNull int[] consumed) {
         mChildHelper.dispatchNestedScroll(dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed,
-                offsetInWindow, type, consumed);
+            offsetInWindow, type, consumed);
     }
 
     @Override
@@ -254,22 +252,21 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
         // Nested Scrolling Pre Pass
         mScrollConsumed[1] = 0;
         dispatchNestedPreScroll(0, unconsumed, mScrollConsumed, null,
-                ViewCompat.TYPE_NON_TOUCH);
+            ViewCompat.TYPE_NON_TOUCH);
         unconsumed -= mScrollConsumed[1];
-
 
         if (unconsumed != 0) {
             // Internal Scroll
             final int oldScrollY = getScrollY();
             overScrollByCompat(0, unconsumed, getScrollX(), oldScrollY, 0, getScrollRange(),
-                    0, 0, false);
+                0, 0, false);
             final int scrolledByMe = getScrollY() - oldScrollY;
             unconsumed -= scrolledByMe;
 
             // Nested Scrolling Post Pass
             mScrollConsumed[1] = 0;
             dispatchNestedScroll(0, 0, 0, unconsumed, mScrollOffset,
-                    ViewCompat.TYPE_NON_TOUCH, mScrollConsumed);
+                ViewCompat.TYPE_NON_TOUCH, mScrollConsumed);
             unconsumed -= mScrollConsumed[1];
         }
 
@@ -292,19 +289,19 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
 
     // copied from NestedScrollView exacly as it looks, leaving overscroll related code, maybe future use
     private boolean overScrollByCompat(int deltaX, int deltaY,
-                                       int scrollX, int scrollY,
-                                       int scrollRangeX, int scrollRangeY,
-                                       int maxOverScrollX, int maxOverScrollY,
-                                       boolean isTouchEvent) {
+        int scrollX, int scrollY,
+        int scrollRangeX, int scrollRangeY,
+        int maxOverScrollX, int maxOverScrollY,
+        boolean isTouchEvent) {
         final int overScrollMode = getOverScrollMode();
         final boolean canScrollHorizontal =
-                webView.computeHorizontalScrollRange() > webView.computeHorizontalScrollExtent();
+            webView.computeHorizontalScrollRange() > webView.computeHorizontalScrollExtent();
         final boolean canScrollVertical =
-                webView.computeVerticalScrollRange() > webView.computeVerticalScrollExtent();
+            webView.computeVerticalScrollRange() > webView.computeVerticalScrollExtent();
         final boolean overScrollHorizontal = overScrollMode == View.OVER_SCROLL_ALWAYS
-                || (overScrollMode == View.OVER_SCROLL_IF_CONTENT_SCROLLS && canScrollHorizontal);
+            || (overScrollMode == View.OVER_SCROLL_IF_CONTENT_SCROLLS && canScrollHorizontal);
         final boolean overScrollVertical = overScrollMode == View.OVER_SCROLL_ALWAYS
-                || (overScrollMode == View.OVER_SCROLL_IF_CONTENT_SCROLLS && canScrollVertical);
+            || (overScrollMode == View.OVER_SCROLL_IF_CONTENT_SCROLLS && canScrollVertical);
 
         int newScrollX = scrollX + deltaX;
         if (!overScrollHorizontal) {
@@ -394,7 +391,7 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
                 final int y = (int) ev.getY(activePointerIndex);
                 int deltaY = mLastMotionY - y;
                 if (dispatchNestedPreScroll(0, deltaY, mScrollConsumed, mScrollOffset,
-                        ViewCompat.TYPE_TOUCH)) {
+                    ViewCompat.TYPE_TOUCH)) {
                     deltaY -= mScrollConsumed[1];
                     mNestedYOffset += mScrollOffset[1];
                 }
@@ -419,7 +416,7 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
                     // Calling overScrollByCompat will call onOverScrolled, which
                     // calls onScrollChanged if applicable.
                     if (overScrollByCompat(0, deltaY, 0, oldY, 0, range, 0,
-                            0, true) && !hasNestedScrollingParent(ViewCompat.TYPE_TOUCH)) {
+                        0, true) && !hasNestedScrollingParent(ViewCompat.TYPE_TOUCH)) {
                         mVelocityTracker.clear();
                     }
 
@@ -429,7 +426,7 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
                     mScrollConsumed[1] = 0;
 
                     dispatchNestedScroll(0, scrolledDeltaY, 0, unconsumedY, mScrollOffset,
-                            ViewCompat.TYPE_TOUCH, mScrollConsumed);
+                        ViewCompat.TYPE_TOUCH, mScrollConsumed);
 
                     mLastMotionY -= mScrollOffset[1];
                     mNestedYOffset += mScrollOffset[1];
@@ -445,7 +442,7 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
                         fling(-initialVelocity);
                     }
                 } else if (mScroller.springBack(getScrollX(), getScrollY(), 0, 0, 0,
-                        getScrollRange())) {
+                    getScrollRange())) {
                     ViewCompat.postInvalidateOnAnimation(view);
                 }
                 mActivePointerId = INVALID_POINTER;
@@ -454,7 +451,7 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
             case MotionEvent.ACTION_CANCEL:
                 if (mIsBeingDragged) {
                     if (mScroller.springBack(getScrollX(), getScrollY(), 0, 0, 0,
-                            getScrollRange())) {
+                        getScrollRange())) {
                         ViewCompat.postInvalidateOnAnimation(view);
                     }
                 }
@@ -521,14 +518,14 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
                 final int pointerIndex = ev.findPointerIndex(activePointerId);
                 if (pointerIndex == -1) {
                     Log.e(TAG, "Invalid pointerId=" + activePointerId
-                            + " in onInterceptTouchEvent");
+                        + " in onInterceptTouchEvent");
                     break;
                 }
 
                 final int y = (int) ev.getY(pointerIndex);
                 final int yDiff = Math.abs(y - mLastMotionY);
                 if (yDiff > mTouchSlop
-                        && (getNestedScrollAxes() & ViewCompat.SCROLL_AXIS_VERTICAL) == 0) {
+                    && (getNestedScrollAxes() & ViewCompat.SCROLL_AXIS_VERTICAL) == 0) {
                     mIsBeingDragged = true;
                     mLastMotionY = y;
                     initVelocityTrackerIfNotExists();

@@ -130,7 +130,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onButtonClick"
-            android:text="ViewPager WebView " />
+            android:text="ViewPager  WebView " />
 
 
         <Button
@@ -138,7 +138,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onButtonClick"
-            android:text="ViewPager WebView2 " />
+            android:text="ViewPager X5 WebView " />
 
     </LinearLayout>
 </ScrollView>
