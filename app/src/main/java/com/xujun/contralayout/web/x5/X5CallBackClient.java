@@ -366,7 +366,7 @@ public class X5CallBackClient implements NestedScrollingChild3, WebViewCallbackC
 
         switch (actionMasked) {
             case MotionEvent.ACTION_DOWN:
-                if ((mIsBeingDragged = !mScroller.isFinished())) {
+                if ((mIsBeingDragged == !mScroller.isFinished())) {
                     final ViewParent parent = view.getParent();
                     if (parent != null) {
                         parent.requestDisallowInterceptTouchEvent(true);

@@ -1,4 +1,4 @@
-package com.netease.cc.main.fragment.jinxuan.x5
+package com.xujun.contralayout.web.x5
 
 import android.view.MotionEvent
 import android.view.View

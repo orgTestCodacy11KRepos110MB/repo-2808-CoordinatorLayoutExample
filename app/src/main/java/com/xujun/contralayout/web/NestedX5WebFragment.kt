@@ -11,7 +11,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.appbar.AppBarLayout
 import com.xujun.contralayout.web.behavior.DisableAbleAppBarLayoutBehavior
 import com.xujun.contralayout.web.behavior.INestedScroll
-import com.netease.cc.main.fragment.jinxuan.x5.X5ProxyWebViewClientExtension
+import com.xujun.contralayout.web.x5.X5ProxyWebViewClientExtension
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest
 import com.tencent.smtt.export.external.interfaces.WebResourceResponse
 import com.tencent.smtt.sdk.WebSettings
@@ -61,7 +61,16 @@ class NestedX5WebFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         webView = view.findViewById<WebView>(R.id.webview)
+        val childCount = webView.childCount
+        Log.i(TAG, "onViewCreated: webView  is $webView, childCount is $childCount")
+
+        for (i in 0 until childCount) {
+            Log.i(TAG, "x5 webView: childView[$i]  is ${webView.getChildAt(i)}")
+        }
+
         appBarLayout = view.findViewById(R.id.appBarLayout)
         val layoutParams = appBarLayout.layoutParams as CoordinatorLayout.LayoutParams
         val disableAbleAppBarLayoutBehavior =
