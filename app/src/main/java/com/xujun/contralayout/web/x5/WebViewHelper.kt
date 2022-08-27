@@ -1,4 +1,4 @@
-package com.xujun.contralayout.web
+package com.xujun.contralayout.web.x5
 
 import android.app.Activity
 import android.content.Context
@@ -10,13 +10,9 @@ import android.net.Uri
 import android.text.InputType
 import android.util.Log
 import android.view.KeyEvent
-import android.view.View
-import android.view.ViewGroup
-import android.webkit.JavascriptInterface
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.PopupMenu
 
 import com.tencent.smtt.export.external.interfaces.*
 import com.tencent.smtt.sdk.*

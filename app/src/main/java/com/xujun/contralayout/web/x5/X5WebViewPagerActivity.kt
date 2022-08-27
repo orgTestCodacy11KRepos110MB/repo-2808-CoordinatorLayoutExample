@@ -1,4 +1,4 @@
-package com.xujun.contralayout.web
+package com.xujun.contralayout.web.x5
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
@@ -9,6 +9,7 @@ import com.xujun.contralayout.web.behavior.HeaderNestedScroll
 import com.xujun.contralayout.FragmentTab
 import com.xujun.contralayout.R
 import com.xujun.contralayout.base.BasePagerAdapter
+import com.xujun.contralayout.web.x5.NestedX5WebFragment
 import java.util.ArrayList
 
 class X5WebViewPagerActivity : AppCompatActivity() {

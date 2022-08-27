@@ -1,4 +1,4 @@
-package com.xujun.contralayout.web
+package com.xujun.contralayout.web.x5
 
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -11,14 +11,13 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.appbar.AppBarLayout
 import com.xujun.contralayout.web.behavior.DisableAbleAppBarLayoutBehavior
 import com.xujun.contralayout.web.behavior.INestedScroll
-import com.xujun.contralayout.web.x5.X5ProxyWebViewClientExtension
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest
 import com.tencent.smtt.export.external.interfaces.WebResourceResponse
 import com.tencent.smtt.sdk.WebSettings
 import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
 import com.xujun.contralayout.R
-import com.xujun.contralayout.web.x5.X5CallBackClient
+import com.xujun.contralayout.web.IX5WebListener
 import java.io.File
 import java.io.FileInputStream
 import java.io.InputStream

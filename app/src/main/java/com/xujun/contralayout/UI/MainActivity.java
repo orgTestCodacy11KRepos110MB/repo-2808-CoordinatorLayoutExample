@@ -31,7 +31,7 @@ import com.xujun.contralayout.UI.zhihu.ZhiHuHomeActivity;
 import com.xujun.contralayout.base.BaseMVPActivity;
 import com.xujun.contralayout.base.mvp.IBasePresenter;
 import com.xujun.contralayout.base.permissions.PermissonListener;
-import com.xujun.contralayout.web.X5WebViewPagerActivity;
+import com.xujun.contralayout.web.x5.X5WebViewPagerActivity;
 import com.xujun.contralayout.web.SimpleWebViewPagerActivity2;
 
 import java.util.List;

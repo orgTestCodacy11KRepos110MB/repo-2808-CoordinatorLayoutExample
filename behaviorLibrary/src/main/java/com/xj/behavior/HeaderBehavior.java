@@ -59,7 +59,7 @@ public class HeaderBehavior extends ViewOffsetBehavior {
         init();
     }
 
-    public void setCouldScroollOpen(boolean couldScroollOpen) {
+    public void setCouldScrollOpen(boolean couldScroollOpen) {
         mCouldScroollOpen = couldScroollOpen;
     }
 

@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".web.X5WebViewPagerActivity"
+            android:name=".web.x5.X5WebViewPagerActivity"
             android:exported="false" />
 
         <activity

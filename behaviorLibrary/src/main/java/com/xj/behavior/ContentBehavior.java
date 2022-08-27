@@ -53,21 +53,13 @@ public class ContentBehavior extends HeaderScrollingViewBehavior {
     }
 
     private void offsetChildAsNeeded(CoordinatorLayout parent, View child, View dependency) {
-        /* int translationY = (int) (denpendencyTranslationY / (getHeaderOffsetRange() * 1.0f)
-         * getScrollRange(dependency));*/
-
         float denpendencyTranslationY = dependency.getTranslationY();
-        Log.d(TAG, "offsetChildAsNeeded: denpendencyTranslationY=" + denpendencyTranslationY
-                + " denpendencyTranslationY=" + denpendencyTranslationY);
-        //        child.setTranslationY(translationY);
 
         //  is a negative number
         int maxTranslationY = -(dependency.getHeight() - getFinalY());
         if (denpendencyTranslationY < maxTranslationY) {
             denpendencyTranslationY = maxTranslationY;
         }
-
-        Log.d(TAG, "offsetChildAsNeeded: child =" + child + " dependency = " + dependency + " denpendencyTranslationY =" + denpendencyTranslationY);
 
         child.setTranslationY((int) (denpendencyTranslationY));
     }
@@ -101,8 +93,6 @@ public class ContentBehavior extends HeaderScrollingViewBehavior {
 
     @Override
     public boolean onNestedPreFling(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View target, float velocityX, float velocityY) {
-        Log.d(TAG, "onNestedPreFling: velocityY =" + velocityY);
-        Log.d(TAG, "onNestedPreFling: target =" + target);
         return super.onNestedPreFling(coordinatorLayout, child, target, velocityX, velocityY);
     }
 }

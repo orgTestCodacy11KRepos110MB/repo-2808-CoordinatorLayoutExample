@@ -102,7 +102,7 @@ public class MeituanSampleActivity extends AppCompatActivity {
         Resources resources = DemoApplication.getAppContext().getResources();
         mContentBehavior = (ContentBehavior) ((CoordinatorLayout.LayoutParams) findViewById(R.id.behavior_content).getLayoutParams()).getBehavior();
         mHeaderBehavior.setHeaderOffsetRange(-(int) resources.getDimension(R.dimen.header_height));
-        mHeaderBehavior.setCouldScroollOpen(true);
+        mHeaderBehavior.setCouldScrollOpen(true);
         mContentBehavior.setDependsLayoutId(R.id.id_uc_news_header_pager);
         mContentBehavior.setFinalY((int) (resources.getDimension(R.dimen.header_title_height) + mStatusbarHeight));
 

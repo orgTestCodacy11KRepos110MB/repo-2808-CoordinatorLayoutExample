@@ -118,7 +118,7 @@ public class QQBrowserDemoActivity extends AppCompatActivity implements TabLayou
         // 设置为 header height 的相反数
         mHeaderBehavior.setHeaderOffsetRange(-resources.getDimensionPixelOffset(R.dimen.header_height));
         // 设置 header close 的时候是否能够通过滑动打开
-        mHeaderBehavior.setCouldScroollOpen(false);
+        mHeaderBehavior.setCouldScrollOpen(false);
 
         mContentBehavior = (ContentBehavior) ((CoordinatorLayout.LayoutParams) findViewById(R.id.behavior_content).getLayoutParams()).getBehavior();
         // 设置依赖于哪一个 id，这里要设置为 Header layout id
